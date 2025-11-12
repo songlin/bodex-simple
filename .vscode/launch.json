@@ -24,7 +24,7 @@
             "program": "${workspaceFolder}/example_grasp/plan_batch_env.py",
             "console": "integratedTerminal",
             "args": [
-                "--manip_cfg_file=sim_dex3/right.yml",
+                "--manip_cfg_file=sim_inspire/left.yml",
                 "--parallel_world=1",
                 "--skip",
                 "--save_id=0",

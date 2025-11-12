@@ -167,20 +167,30 @@ if __name__ == "__main__":
         ):
             log_warn(f"skip {world_info_dict['save_prefix']}")
             continue
-        file_path=os.path.join(os.getcwd(), "coacd_0.05/coacd_merge.obj")
-        urdf_path=os.path.join(os.getcwd(), "coacd_0.05/coacd.urdf")
-        obj_pose=_transform_to_robot_frame(np.array([0.4000000059604645, 0.0, 0.03657222166657448,0.6013860816541081, 9.584801678524222e-05, -0.0020859967168959104, -0.7989558312094444 ]))
-        world_cfg=[{"mesh":{"apple":{
-            "scale": np.array([1.0, 1.0, 1.0]),
-            "pose": obj_pose,
-            "file_path": file_path,
-            "urdf_path": urdf_path,
-        }},"cuboid": {
+
+        file_path = os.path.join(os.getcwd(), "coacd_0.05/coacd_merge.obj")
+        urdf_path = os.path.join(os.getcwd(), "coacd_0.05/coacd.urdf")
+        npy_path = os.path.join(os.getcwd(), "coacd_0.05/12_stable.npy")
+
+        data = np.load(npy_path, allow_pickle=True)[0]
+        obj_pose = _transform_to_robot_frame(np.array([0.4000000059604645, 0.0, data[2], data[3], data[4], data[5], data[6]]))
+        world_cfg = [{
+            "mesh": {
+                "apple": {
+                    "scale": np.array([1.0, 1.0, 1.0]),
+                    "pose": obj_pose,
+                    "file_path": file_path,
+                    "urdf_path": urdf_path,
+                }
+            },
+
+            "cuboid": {
                 "table": {
                     "dims": [0.4, 0.4, 0.2],
                     "pose": [0.4, 0.0, -0.1, 1, 0, 0, 0.0],
                 }
-            }}]
+            }
+        }]
 
         # name=world_info_dict["manip_name"]
         # world_info_dict['world_cfg'][0]['mesh'][name[0]]['pose']=np.array([0.2,0,0.3,1,0,0,0])
