@@ -9,7 +9,7 @@ import random
 from curobo.util.logger import log_warn
 from curobo.util_file import load_json, load_scene_cfg, join_path, get_assets_path
 
-
+import re
 GraspNet_1B_Object_Names = {
     0: "cracker box",
     1: "sugar box",
@@ -112,6 +112,12 @@ class GraspConfigDataset(Dataset):
         for k, v in cfg.items():
             cfg[k] = v[0]
         cfg["save_prefix"] = scene_cfg["scene_id"] + "_"
+        
+        match = re.search(r'_mogen(\d+)', str(full_path))
+        if not match:
+            raise ValueError
+        fidx = match.group(1)
+        cfg["file_index"] = fidx
         return cfg
 
 

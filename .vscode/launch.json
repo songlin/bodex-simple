@@ -36,13 +36,19 @@
             "name": "visualize_npy",
             "type": "debugpy",
             "request": "launch",
-            "python": "/home/kaidikang/miniconda3/envs/bodex/bin/python",
+            // "python": "/home/kaidikang/miniconda3/envs/bodex/bin/python",
             "program": "${workspaceFolder}/example_grasp/visualize_npy.py",
             "console": "integratedTerminal",
             "args": [
-                "--manip_cfg_file=sim_dex3/right.yml",
-                "--path=dex3_debug",
-                "--mode=grasp",
+                // "--manip_cfg_file=sim_dex3/right.yml",
+                // "--path=dex3_debug",
+                // "--mode=grasp",
+
+                
+                "--manip_cfg_file=sim_inspire/left.yml",
+                "--path=inspire_debug",
+                "--mode=mogen",
+                "--skip",
                 // "--save_mode=npy",
                 // "--save_data=final_and_mid",
                 // "--save_id=0",

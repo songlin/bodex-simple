@@ -375,6 +375,11 @@ if __name__ == "__main__":
         # world_info_dict["robot_pose"] = robot_pose_traj.unsqueeze(0)
 
         for i in range(robot_pose_traj.shape[0]):
+            
+            # y = pregrasp_pose_qpos[i][1]
+            # if y > 0:
+            #     continue
+
             world_info_dict["robot_pose"] = robot_pose_traj[i].unsqueeze(0)
             save_mogen.save_piece(world_info_dict)
             from pathlib import Path
@@ -387,8 +392,11 @@ if __name__ == "__main__":
 
             torch.save(pregrasp_pose_qpos[i], str(new_file).replace(".npy","_pregrasp.pt"))
             torch.save(grasp_pose_qpos[i], str(new_file).replace(".npy",".pt"))
-            old_file.rename(new_file)
-            pass
+            moved = old_file.rename(new_file)
+            print(f"moved {old_file} to {new_file} = {moved}")
+
+            print(pregrasp_pose_qpos[i][:7])
+            # exit(0)
         break
         # save_mogen.save_piece(world_info_dict)
         log_warn(f"Sinlge Time (mogen): {time.time()-smt}")

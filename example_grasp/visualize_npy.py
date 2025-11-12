@@ -102,10 +102,11 @@ if __name__ == "__main__":
 
     tensor_args = TensorDeviceType()
 
-    for  i ,world_info_dict in enumerate(world_generator):
+    for  _,world_info_dict in enumerate(world_generator):
         # if args.skip and save_helper.exist_piece(world_info_dict["save_prefix"]):
         #     log_warn(f"skip {world_info_dict['save_prefix']}")
         #     continue
+        i = world_info_dict["file_index"] # str(world_info_dict['filepath'])[0]
         world_info_dict["robot_pose"] = tensor_args.to_device(world_info_dict["robot_pose"])
         world_info_dict["world_model"] = [WorldConfig.from_dict(world_info_dict["world_cfg"][0])]
         save_helper.save_piece(world_info_dict)
