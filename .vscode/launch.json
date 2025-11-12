@@ -6,7 +6,7 @@
             "name": "plan_mogen",
             "type": "debugpy",
             "request": "launch",
-            "python": "/home/kaidikang/miniconda3/envs/bodex/bin/python",
+            // "python": "/home/kaidikang/miniconda3/envs/bodex/bin/python",
             "program": "${workspaceFolder}/example_grasp/plan_mogen_batch.py",
             "console": "integratedTerminal",
             "args": [
