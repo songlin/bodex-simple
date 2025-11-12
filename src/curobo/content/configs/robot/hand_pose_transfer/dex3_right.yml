@@ -1,0 +1,10 @@
+# Dex3-1 Right Hand Pose Transfer
+# Hand coordinate frame:
+#   X: along fingers (pointing forward)
+#   Y: towards thumb-side / palm normal (pointing left hand direction)
+#   Z: normal to thumb-index plane (pointing upwards)
+#
+# This matches standard robot convention, so identity transform is used
+right_hand_palm_link:
+  r: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]  # Identity (already aligned)
+  t: [0.0, 0.0, 0.0]  # No translation offset needed

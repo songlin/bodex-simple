@@ -1,0 +1,98 @@
+world:
+  type: scene_cfg #graspnet 
+  template_path: object/DGN_2k/scene_cfg/**/floating/*.npy #assets/graspnet
+  start: 
+  end: 
+
+robot_file: "dex3_task_right.yml"
+robot_file_with_arm: "g1_29dof_with_dex3.yml"
+base_cfg_file: "base_grasp.yml"
+particle_file: "particle_grasp_debug.yml"
+gradient_file: "gradient_grasp_fc.yml"
+
+exp_name: 'dex3_debug'
+seed_num: 20
+
+seeder_cfg:
+  obj_sample:
+    num: 128
+    inflate: 0.1
+    convex_hull: True
+    collision_free: True 
+  ik_init_q:
+  load_path: 
+  skip_transfer: False
+  t:  
+  r:  
+  # 7 DOF for Dex3-1 Hand (all joints independently actuated)
+  q: [0.2, -0.2, -0.6, 0.5, 0.7, 0.5, 0.7]
+  # Jitter for sampling variety
+  jitter_angle: [[-180, -15, -15], [180, 15, 15]]
+  jitter_dist: [[0.0, -0.03, -0.03], [0.03, 0.03, 0.03]]
+
+grasp_contact_strategy:
+  # 3 contact points (all fingertips), sphere index 0 for each
+  contact_points_name: 
+    - right_hand_thumb_2_link/0      # Thumb tip
+    - right_hand_index_1_link/0      # Index tip
+    - right_hand_middle_1_link/0     # Middle tip
+  
+  opt_progress: [0.0, 0.6, 0.8]
+  distance: [0.01, 0.01, 0.0]
+  contact_query_mode: [-1, 0, 0]
+  save_qpos: [False, True]
+  max_ge_stage: 0
+
+grasp_cfg:
+  task_dict:
+    f: [0, 0, 1]       # Force direction (downward gravity)
+    p: [0, 0, 0]       # No external moment
+    t: [0, 0, 0]       # No external torque
+    gamma: 180         # Friction cone angle
+  
+  ge_param:
+    type: 'qp'
+    miu_coef: [0.1, 0]
+    solver_type: 'batch_reluqp'
+    k_lower: 0.2
+    
+    # Pressure constraints for 3-finger hand
+    # Format: [[contact_id_list, lower_bound], ...]
+    # lower_bound: minimum percentage of total wrench this group must provide
+    # TODO: Tune these constraints based on hand mechanics and testing
+    pressure_constraints:
+      # All 3 fingers together provide full wrench
+      - [[0, 1, 2], 1.0]
+      # Thumb provides at least 35% (opposition)
+      - [[0], 0.35]
+      # Index+Middle provide at least 60% (stronger pair)
+      - [[1, 2], 0.6]
+      # Each finger individually provides at least 20%
+      - [[1], 0.2]
+      - [[2], 0.2]
+    
+    enable_density: False
+    solve_interval: 5
+
+# Initial configuration: 7 DOF + 7 base pose (x,y,z,qw,qx,qy,qz) + padding
+# Total length matches expected format (29 values to match Inspire/Allegro)
+mogen_init: [
+  # 7 joint angles (safe retract configuration)
+  0,    # Thumb abduction: 11.5°
+  0,   # Thumb MCP: -11.5°
+  0,   # Thumb IP: -34.4°
+  0,    # Index MCP: 28.6°
+  0,    # Index PIP: 40.1°
+  0,    # Middle MCP: 28.6°
+  0,    # Middle PIP: 40.1°
+  # 7 base pose values (filled by solver)
+  0, 0, 0, 0, 0, 0, 0,
+  # Padding to match expected length (15 zeros for remaining DOFs)
+  0, 0, 0, 
+  # 0,0,0,0,0,0,0,
+  # 0,0,0,0,0,0,0,
+  # 0,0,0,0,0,0,
+  # 0,0,0,0,0,0,
+
+
+]

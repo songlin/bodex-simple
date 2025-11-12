@@ -1,0 +1,9 @@
+# Inspire Left Hand Pose Transfer
+# Hand coordinate frame:
+#   X: negative palm normal (negative X points out of palm)
+#   Y: along fingers in reverse direction (pointing backwards, negative Y points to finger tips) 
+#   Z: towards thumbside
+
+L_hand_base_link:
+  r: [[-1.0, 0.0, 0.0], [0.0, -1.0, 0.0], [0.0, 0.0, 1.0]]
+  t: [0.0, 0.0, 0.0]  # Offset to palm center (midpoint of finger bases)
