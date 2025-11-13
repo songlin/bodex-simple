@@ -160,7 +160,7 @@ data
 
 # torch pickles:
 *.t
-*.npy
+# *.npy
 *.zip
 *.qdrep
 *.qdstrm
@@ -213,4 +213,5 @@ docs/*
 
 src/curobo/content/assets/object
 src/curobo/content/assets/output
-/src/curobo/content/assets/robot/franka_extensions_240704/meshes/customized_gripper/finger_visual.obj
+# This caused issues with git lfs
+/src/curobo/content/assets/robot/franka_extensions_240704

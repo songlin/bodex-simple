@@ -384,16 +384,15 @@ if __name__ == "__main__":
             save_mogen.save_piece(world_info_dict)
             from pathlib import Path
 
-            # old_file = Path(os.path.join("/home/kaidikang/BODex/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
+            # old_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
             old_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_inspire/left/inspire_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
 
-            # new_file = Path(os.path.join("/home/kaidikang/BODex/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata",f"apple_mogen{i}.npy"))
+            # new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata",f"apple_mogen{i}.npy"))
             new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_inspire/left/inspire_debug/graspdata",f"apple_mogen{i}.npy"))
 
             torch.save(pregrasp_pose_qpos[i], str(new_file).replace(".npy","_pregrasp.pt"))
             torch.save(grasp_pose_qpos[i], str(new_file).replace(".npy",".pt"))
-            moved = old_file.rename(new_file)
-            print(f"moved {old_file} to {new_file} = {moved}")
+            old_file.rename(new_file)
 
             print(pregrasp_pose_qpos[i][:7])
             # exit(0)
