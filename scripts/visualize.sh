@@ -18,7 +18,7 @@ elif [ "$1" = "dexmate" ]; then
     python example_grasp/visualize_npy.py \
         --manip_cfg_file sim_vega1/right.yml \
         --path dexmate_debug \
-        --mode grasp \
+        --mode mogen \
         --skip
 
 else

@@ -93,5 +93,5 @@ mogen_init: [
   # 7 base pose values (filled by solver)
   0, 0, 0, 0, 0, 0, 0,
   # Padding to match expected length
-  0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]

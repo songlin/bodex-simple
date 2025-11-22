@@ -15,6 +15,13 @@ robot_cfg:
       "R_mf_l2",
       "R_rf_l2",
       "R_lf_l2",
+
+      "L_hand_base",
+      "L_th_l2",
+      "L_ff_l2",
+      "L_mf_l2",
+      "L_rf_l2",
+      "L_lf_l2",
     ]
 
     # lock_joints:
@@ -64,6 +71,20 @@ robot_cfg:
       "R_rf_l2",
       "R_lf_l1",
       "R_lf_l2",
+
+      #Left hand
+      "L_hand_base",
+      "L_th_l0",
+      "L_th_l1",
+      "L_th_l2",
+      "L_ff_l1",
+      "L_ff_l2",
+      "L_mf_l1",
+      "L_mf_l2",
+      "L_rf_l1",
+      "L_rf_l2",
+      "L_lf_l1",
+      "L_lf_l2",
     ]
     collision_spheres: spheres/vega1_dexmate.yml
     collision_sphere_buffer: 0.005
@@ -276,6 +297,96 @@ robot_cfg:
         "R_lf_l1",
         "R_lf_l2",
       ],
+
+      # Left hand self-collision ignore
+      "L_hand_base": [
+        "L_hand_base",
+        "L_th_l0",
+        "L_th_l1",
+        "L_th_l2",
+        "L_ff_l1",
+        "L_ff_l2",
+        "L_mf_l1",
+        "L_mf_l2",
+        "L_rf_l1",
+        "L_rf_l2",
+        "L_lf_l1",
+        "L_lf_l2",
+        "L_arm_l7",
+      ],
+      "L_th_l0": [
+        "L_hand_base",
+        "L_th_l0",
+        "L_th_l1",
+        "L_th_l2",
+      ],
+      "L_th_l1": [
+        "L_hand_base",
+        "L_th_l0",
+        "L_th_l1",
+        "L_th_l2",
+      ],
+      "L_th_l2": [
+        "L_hand_base",
+        "L_th_l0",
+        "L_th_l1",
+        "L_th_l2",
+      ],
+      "L_ff_l1": [
+        "L_hand_base",
+        "L_ff_l1",
+        "L_ff_l2",
+        "L_mf_l1",
+      ],
+      "L_ff_l2": [
+        "L_hand_base",
+        "L_ff_l1",
+        "L_ff_l2",
+        "L_mf_l1",
+        "L_mf_l2",
+      ],
+      "L_mf_l1": [
+        "L_hand_base",
+        "L_ff_l1",
+        "L_mf_l1",
+        "L_mf_l2",
+        "L_rf_l1",
+      ],
+      "L_mf_l2": [
+        "L_hand_base",
+        "L_ff_l2",
+        "L_mf_l1",
+        "L_mf_l2",
+        "L_rf_l1",
+        "L_rf_l2",
+      ],
+      "L_rf_l1": [
+        "L_hand_base",
+        "L_mf_l1",
+        "L_rf_l1",
+        "L_rf_l2",
+        "L_lf_l1",
+      ],
+      "L_rf_l2": [
+        "L_hand_base",
+        "L_mf_l2",
+        "L_rf_l1",
+        "L_rf_l2",
+        "L_lf_l1",
+        "L_lf_l2",
+      ],
+      "L_lf_l1": [
+        "L_hand_base",
+        "L_rf_l1",
+        "L_lf_l1",
+        "L_lf_l2",
+      ],
+      "L_lf_l2": [
+        "L_hand_base",
+        "L_rf_l2",
+        "L_lf_l1",
+        "L_lf_l2",
+      ],
     } # Dict[str, List[str]]
     
     self_collision_buffer: {
@@ -311,6 +422,19 @@ robot_cfg:
       "R_rf_l2": 0.0,
       "R_lf_l1": 0.0,
       "R_lf_l2": 0.0,
+
+      "L_hand_base": 0.0,
+      "L_th_l0": 0.0,
+      "L_th_l1": 0.0,
+      "L_th_l2": 0.0,
+      "L_ff_l1": 0.0,
+      "L_ff_l2": 0.0,
+      "L_mf_l1": 0.0,
+      "L_mf_l2": 0.0,
+      "L_rf_l1": 0.0,
+      "L_rf_l2": 0.0,
+      "L_lf_l1": 0.0,
+      "L_lf_l2": 0.0,
     } # Dict[str, float]
 
     use_global_cumul: True

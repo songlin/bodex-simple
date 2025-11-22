@@ -16,7 +16,7 @@ elif [ "$1" = "dex3" ]; then
 
 elif [ "$1" = "dexmate" ]; then
     CUDA_VISIBLE_DEVICES=0 python example_grasp/plan_batch_env.py \
-        --manip_cfg_file sim_dexmate/left.yml \
+        --manip_cfg_file sim_vega1/right.yml \
         --parallel_world 1 \
         --skip \
         --save_id 0
