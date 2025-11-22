@@ -1,0 +1,176 @@
+robot_cfg:
+  kinematics:
+    use_usd_kinematics: false
+    urdf_path: vega.urdf
+
+    external_robot_configs_path: <PROJECT_DIR>/data/robots/vega_1/curobo # data/robots
+    external_asset_path: <PROJECT_DIR>/data/robots/vega_1
+
+    asset_root_path: robot/vega
+    isaac_usd_path: robot/vega/vega_1.usd
+
+    usd_robot_root: "/vega"
+    usd_path: null
+
+    base_link: "base"
+    ee_link: "R_ee" # to be checked'
+    link_names: ["L_ee", "R_ee"] # to be checked
+    collision_link_names:
+      [
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+        "L_arm_l8",
+        "L_ee",
+        # "L_hand_base",
+        # "L_ff_l1",
+        # "L_ff_l2",
+        # "L_lf_l1",
+        # "L_lf_l2",
+        # "L_mf_l1",
+        # "L_mf_l2",
+        # "L_rf_l1",
+        # "L_rf_l2",
+        # "L_th_l0",
+        # "L_th_l1",
+        # "L_th_l2",
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
+        "R_arm_l8",
+        "R_ee",
+        # "R_hand_base",
+        # "R_ff_l1",
+        # "R_ff_l2",
+        # "R_lf_l1",
+        # "R_lf_l2",
+        # "R_mf_l1",
+        # "R_mf_l2",
+        # "R_rf_l1",
+        # "R_rf_l2",
+        # "R_th_l0",
+        # "R_th_l1",
+        # "R_th_l2",
+      ]
+    collision_spheres: spheres/vega_1.yml
+    collision_sphere_buffer: 0.002
+    extra_collision_spheres: {} # to be checked "attached_object": 4
+    use_global_cumul: True
+
+    self_collision_ignore: 
+      torso_l1: 
+        - torso_l2
+        - torso_l3
+      torso_l2:
+        - torso_l3
+      torso_l3:
+        - L_arm_l1
+        - R_arm_l1
+      L_arm_l1: 
+        - L_arm_l2
+      L_arm_l2:
+        - L_arm_l3
+      L_arm_l3:
+        - L_arm_l4
+      L_arm_l4:
+        - L_arm_l5
+      L_arm_l5:
+        - L_arm_l6
+      L_arm_l6:
+        - L_arm_l7
+        - L_arm_l8
+        - L_ee
+      L_arm_l7:
+        - L_arm_l8
+        - L_ee
+      L_arm_l8:
+        - L_ee
+      R_arm_l1: 
+        - R_arm_l2
+      R_arm_l2:
+        - R_arm_l3
+      R_arm_l3:
+        - R_arm_l4
+      R_arm_l4:
+        - R_arm_l5
+      R_arm_l5:
+        - R_arm_l6
+      R_arm_l6:
+        - R_arm_l7
+        - R_arm_l8
+        - R_ee
+      R_arm_l7:
+        - R_arm_l8
+        - R_ee
+      R_arm_l8:
+        - R_ee
+    self_collision_buffer:
+      torso_l1: 0.0
+      torso_l2: 0.0
+      torso_l3: 0.0
+      L_arm_l1: 0.0
+      L_arm_l2: 0.0
+      L_arm_l3: 0.0
+      L_arm_l4: 0.0
+      L_arm_l5: 0.0
+      L_arm_l6: 0.0
+      L_arm_l7: 0.0
+      L_ee: 0.0
+      L_arm_l8: 0.0
+      R_arm_l1: 0.0
+      R_arm_l2: 0.0
+      R_arm_l3: 0.0
+      R_arm_l4: 0.0
+      R_arm_l5: 0.0
+      R_arm_l6: 0.0
+      R_arm_l7: 0.0
+      R_arm_l8: 0.0
+      R_ee: 0.0
+
+    lock_joints: {
+      # 'L_ff_j1':0, 'L_ff_j2':0, 'L_lf_j1':0, 'L_lf_j2':0, 'L_mf_j1':0, 'L_mf_j2':0, 'L_rf_j1':0, 'L_rf_j2':0, 'L_th_j0':0, 'L_th_j1':0, 'L_th_j2':0,
+      # 'torso_j1':0.2, 'torso_j2':0.57, 'torso_j3':0,
+    }
+
+    cspace:
+      joint_names: [
+        'B_wheel_j1', 'L_wheel_j1', 'L_wheel_j2', 'R_wheel_j1', 'B_wheel_j2', 'R_wheel_j2',
+        'torso_j1', 'torso_j2', 'torso_j3', 
+        'L_arm_j1', 'L_arm_j2', 'L_arm_j3', 'L_arm_j4', 'L_arm_j5', 'L_arm_j6', 'L_arm_j7', 'L_ff_j1', 'L_ff_j2', 'L_lf_j1', 'L_lf_j2', 'L_mf_j1', 'L_mf_j2', 'L_rf_j1', 'L_rf_j2', 'L_th_j0', 'L_th_j1', 'L_th_j2',
+        'R_arm_j1', 'R_arm_j2', 'R_arm_j3', 'R_arm_j4', 'R_arm_j5', 'R_arm_j6', 'R_arm_j7',  'R_ff_j1', 'R_ff_j2', 'R_lf_j1', 'R_lf_j2', 'R_mf_j1', 'R_mf_j2', 'R_rf_j1', 'R_rf_j2', 'R_th_j0', 'R_th_j1', 'R_th_j2',
+        'head_j1', 'head_j2', 'head_j3',
+      ]
+      retract_config: [
+        0, 0, 0, 0, 0, 0,
+        0.0, 0.0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0,
+      ]
+      null_space_weight: [
+        1, 1, 1, 1, 1, 1,
+        1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1,
+      ]
+      cspace_distance_weight: [
+        1, 1, 1, 1, 1, 1,
+        1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1,
+      ]
+      max_jerk: 500.0
+      max_acceleration: 15.0

@@ -116,8 +116,8 @@ class GraspConfigDataset(Dataset):
         match = re.search(r'_mogen(\d+)', str(full_path))
         if not match:
             raise ValueError
-        fidx = match.group(1)
-        cfg["file_index"] = fidx
+        idx = match.group(1)
+        cfg["file_index"] = idx
         return cfg
 
 

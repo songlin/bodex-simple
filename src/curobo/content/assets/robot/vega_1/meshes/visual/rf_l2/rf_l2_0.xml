@@ -1,0 +1,20 @@
+<mujoco model="rf_l2_0">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="Black" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0"/>
+    <mesh file="rf_l2_0.obj"/>
+  </asset>
+  <worldbody>
+    <body name="rf_l2_0">
+      <geom material="Black" mesh="rf_l2_0" class="visual"/>
+      <geom mesh="rf_l2_0" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

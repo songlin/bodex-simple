@@ -5,5 +5,5 @@
 #   Z: towards thumbside
 
 L_hand_base_link:
-  r: [[-1.0, 0.0, 0.0], [0.0, -1.0, 0.0], [0.0, 0.0, 1.0]]
+  r: [[-1.0, 0.0, 0.0], [0.0, -1.0, 0.0], [0.0, 0.0, -1.0]]
   t: [0.0, 0.0, 0.0]  # Offset to palm center (midpoint of finger bases)

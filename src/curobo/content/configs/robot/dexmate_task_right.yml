@@ -1,0 +1,136 @@
+##
+## Vega-1 Right Hand Configuration for CuRobo
+## Right hand only
+##
+robot_cfg:
+  robot_color: [0.8, 0.3, 0.2, 1.0]
+  kinematics:
+    base_link: R_hand_base
+    use_root_pose: True
+    hand_pose_transfer_path: hand_pose_transfer/dexmate_right.yml
+    
+    # All links that need collision checking
+    collision_link_names:
+      - R_hand_base
+      - R_th_l0
+      - R_th_l1
+      - R_th_l2
+      - R_ff_l1
+      - R_ff_l2
+      - R_mf_l1
+      - R_mf_l2
+      - R_rf_l1
+      - R_rf_l2
+      - R_lf_l1
+      - R_lf_l2
+    
+    collision_sphere_buffer: 0.0
+    collision_spheres: spheres/dexmate_right.yml
+    
+    # Primary end-effector
+    ee_link: R_hand_base
+    
+    # Contact points - ONLY fingertip links (l2 links)
+    link_names:
+      - R_th_l2      # Thumb tip
+      - R_ff_l2      # Index fingertip
+      - R_mf_l2      # Middle fingertip
+      - R_rf_l2      # Ring fingertip
+      - R_lf_l2      # Pinky fingertip
+    
+    # Self-collision buffer for each link
+    self_collision_buffer:
+      R_hand_base: 0.0
+      R_th_l0: 0.002
+      R_th_l1: 0.002
+      R_th_l2: 0.0
+      R_ff_l1: 0.002
+      R_ff_l2: 0.0
+      R_mf_l1: 0.002
+      R_mf_l2: 0.0
+      R_rf_l1: 0.002
+      R_rf_l2: 0.0
+      R_lf_l1: 0.002
+      R_lf_l2: 0.0
+    
+    # Adjacent links in kinematic chain don't collide
+    self_collision_ignore:
+      R_hand_base:
+        - R_th_l0
+        - R_ff_l1
+        - R_mf_l1
+        - R_rf_l1
+        - R_lf_l1
+      R_th_l0: [R_th_l1]
+      R_th_l1: [R_th_l2]
+      R_ff_l1: [R_ff_l2, R_mf_l1]      # Index-middle adjacency
+      R_mf_l1: [R_mf_l2, R_rf_l1]      # Middle-ring adjacency
+      R_rf_l1: [R_rf_l2, R_lf_l1]      # Ring-pinky adjacency
+      R_lf_l1: [R_lf_l2]
+    
+    # Path to Vega-1 URDF
+    urdf_path: robot/vega_1/vega.urdf
+    asset_root_path: robot/vega_1
+    
+    # Configuration space - 6 actuated DOF
+    # Note: R_th_j2, R_ff_j2, R_mf_j2, R_rf_j2, R_lf_j2 are mimic joints
+    cspace:
+      joint_names:
+        - R_th_j0          # Thumb opposition/yaw
+        - R_th_j1          # Thumb flexion/pitch
+        - R_ff_j1          # Index flexion
+        - R_mf_j1          # Middle flexion
+        - R_rf_j1          # Ring flexion
+        - R_lf_j1          # Pinky flexion
+      
+      # Weight for configuration space distance metric
+      cspace_distance_weight:
+        - 0.15  # Thumb yaw more important for grasp variety
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+        - 0.1
+      
+      # Null space optimization weights
+      null_space_weight:
+        - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
+      
+      # Safe collision-free retracted configuration
+      # Based on joint limits from URDF:
+      # R_th_j0: -0.0158 to 1.605
+      # R_th_j1: -0.3468 to 0.1834
+      # R_ff_j1: -1.0946 to 0.2891
+      # R_mf_j1: -1.0844 to 0.2801
+      # R_rf_j1: -1.0154 to 0.2840
+      # R_lf_j1: -1.0118 to 0.2811
+      retract_config:
+        - 0.5    # Thumb moderate opposition
+        - 0.0    # Thumb neutral flexion
+        - -0.3   # Fingers partially open
+        - -0.3
+        - -0.3
+        - -0.3
+      
+      max_acceleration: 15.0
+      max_jerk: 500.0
+    
+    # All links for visualization
+    mesh_link_names:
+      - R_hand_base
+      - R_th_l0
+      - R_th_l1
+      - R_th_l2
+      - R_ff_l1
+      - R_ff_l2
+      - R_mf_l1
+      - R_mf_l2
+      - R_rf_l1
+      - R_rf_l2
+      - R_lf_l1
+      - R_lf_l2

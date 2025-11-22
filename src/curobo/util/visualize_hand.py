@@ -549,10 +549,12 @@ class URDFPenetrationVisualizer:
 # Example usage
 if __name__ == "__main__":
     config = URDFVisualizerConfig(
-        urdf_path="/home/kaidikang/BODex/src/curobo/content/assets/robot/unitree_inspire/g1_29dof_with_inspire_hand.urdf",
-        collision_spheres_path="/home/kaidikang/BODex/src/curobo/content/configs/robot/spheres/inspire_right.yml",  # Contains collision_link_names
+        urdf_path="/home/kaidikang/BODex/src/curobo/content/assets/robot/vega_1/vega.urdf",
+        collision_spheres_path="/home/kaidikang/BODex/src/curobo/content/configs/robot/spheres/vega1_dexmate.yml",  # Contains collision_link_names
         joint_angles={
             # Only specify hand joint angles
+            
+            # Inspire left
             # "L_thumb_proximal_yaw_joint": 0.0,  # Thumb opposition
             # "L_thumb_proximal_pitch_joint": 0.0,  # Thumb flexion
             # "L_index_proximal_joint": 0.0,  # Index flexion
@@ -560,12 +562,29 @@ if __name__ == "__main__":
             # "L_ring_proximal_joint": 0.0,  # Ring flexion
             # "L_pinky_proximal_joint": 0.0,  # Pinky flexion
             
-            "R_thumb_proximal_yaw_joint": 0.0,  # Thumb opposition
-            "R_thumb_proximal_pitch_joint": 0.0,  # Thumb flexion
-            "R_index_proximal_joint": 0.0,  # Index flexion
-            "R_middle_proximal_joint": 0.0,  # Middle flexion
-            "R_ring_proximal_joint": 0.0,  # Ring flexion
-            "R_pinky_proximal_joint": 0.0,  # Pinky flexion
+            # Inspire right
+            # "R_thumb_proximal_yaw_joint": 0.0,  # Thumb opposition
+            # "R_thumb_proximal_pitch_joint": 0.0,  # Thumb flexion
+            # "R_index_proximal_joint": 0.0,  # Index flexion
+            # "R_middle_proximal_joint": 0.0,  # Middle flexion
+            # "R_ring_proximal_joint": 0.0,  # Ring flexion
+            # "R_pinky_proximal_joint": 0.0,  # Pinky flexion
+
+            # Dexmate right
+            # "R_th_j0": 0.0,          # Thumb opposition/yaw
+            # "R_th_j1": 0.0,          # Thumb flexion/pitch
+            # "R_ff_j1": 0.0,          # Index flexion
+            # "R_mf_j1": 0.0,          # Middle flexion
+            # "R_rf_j1": 0.0,          # Ring flexion
+            # "R_lf_j1": 0.0,          # Pinky flexion
+
+            # Dexmate left
+            "L_th_j0": 0.0,          # Thumb opposition/yaw
+            "L_th_j1": 0.0,          # Thumb flexion/pitch
+            "L_ff_j1": 0.0,          # Index flexion
+            "L_mf_j1": 0.0,          # Middle flexion
+            "L_rf_j1": 0.0,          # Ring flexion
+            "L_lf_j1": 0.0,          # Pinky flexion
         },
         base_position=[0.0, 0.0, 0.0],
         base_orientation=[0.0, 0.0, 0.0],

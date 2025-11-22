@@ -1,0 +1,34 @@
+<mujoco model="wheel_l1">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0"/>
+    <material name="material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.77254902 0.75294118 0.73333333 1.0"/>
+    <material name="material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0"/>
+    <material name="material_3" specular="0.4000000000000001" shininess="0.001" rgba="0.74901961 1.00000000 0.74901961 1.0"/>
+    <material name="material_4" specular="0.4000000000000001" shininess="0.001" rgba="0.79215686 0.81960784 0.92941176 1.0"/>
+    <material name="material_5" specular="0.4000000000000001" shininess="0.001" rgba="1.00000000 1.00000000 0.50196078 1.0"/>
+    <mesh file="wheel_l1_0.obj"/>
+    <mesh file="wheel_l1_1.obj"/>
+    <mesh file="wheel_l1_2.obj"/>
+    <mesh file="wheel_l1_3.obj"/>
+    <mesh file="wheel_l1_4.obj"/>
+    <mesh file="wheel_l1_5.obj"/>
+  </asset>
+  <worldbody>
+    <body name="wheel_l1">
+      <geom mesh="wheel_l1_0" material="material_5" class="visual"/>
+      <geom mesh="wheel_l1_1" material="material_4" class="visual"/>
+      <geom mesh="wheel_l1_2" material="material_3" class="visual"/>
+      <geom mesh="wheel_l1_3" material="material_2" class="visual"/>
+      <geom mesh="wheel_l1_4" material="material_1" class="visual"/>
+      <geom mesh="wheel_l1_5" material="material_0" class="visual"/>
+    </body>
+  </worldbody>
+</mujoco>

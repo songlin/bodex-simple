@@ -1,0 +1,746 @@
+<mujoco model="vega-1">
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint />
+        <motor />
+      </default>
+      <default class="visual">
+        <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom material="collision_material" condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01" />
+      </default>
+              <!-- <default class="racket">
+            <geom material="racket_material" friction="1.5 1.5 0.005"/>
+        </default> -->
+    </default>
+  </default>
+  <compiler angle="radian" />
+  <asset>
+    <!-- <material name="racket_material" rgba="0.8 0.2 0.2 1" /> -->
+    <material name="default_material" rgba="0.7 0.7 0.7 1" />
+    <material name="visualgeom" rgba="0.7 0.7 0.7 1" />
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4"
+            rgb2="0.1 0.2 0.3"
+            markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5"
+        reflectance="0.2" />
+    <!-- <material name="collision_material" rgba="1.0 0.28 0.1 0.9" /> -->
+    <material name="collision_material" rgba="1.0 0.28 0.1 0.0" />
+    <material name="B_wheel_l1_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="B_wheel_l2_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.89803922 0.91372549 0.92549020 1.0" />
+    <material name="B_wheel_l2_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="L_arm_l1_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.99607843 0.87058824 0.75686275 1.0" />
+    <material name="L_arm_l1_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="L_arm_l1_material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.89803922 0.91372549 0.92549020 1.0" />
+    <material name="L_arm_l6_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="R_arm_l1_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.99607843 0.87058824 0.75686275 1.0" />
+    <material name="R_arm_l1_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="R_arm_l1_material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.89803922 0.91372549 0.92549020 1.0" />
+    <material name="R_arm_l6_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="arm_l2_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="arm_l3_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="arm_l4_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="arm_l5_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="arm_l7_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="arm_l8_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.75294118 0.75294118 0.75294118 1.0" />
+    <material name="arm_l8_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="base_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="base_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.69411765 0.09803922 0.09803922 1.0" />
+    <material name="base_material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="base_material_3" specular="0.4000000000000001" shininess="0.001" rgba="1.00000000 0.93725490 0.13725490 1.0" />
+    <material name="base_material_4" specular="0.4000000000000001" shininess="0.001" rgba="0.16470588 0.74901961 0.14509804 1.0" />
+    <material name="base_material_5" specular="0.4000000000000001" shininess="0.001" rgba="0.00392157 0.80000000 0.00000000 1.0" />
+    <material name="base_material_6" specular="0.4000000000000001" shininess="0.001" rgba="0.05098039 0.05882353 0.80000000 1.0" />
+    <material name="base_material_7" specular="0.4000000000000001" shininess="0.001" rgba="0.56078431 0.80000000 0.58823529 1.0" />
+    <material name="base_cam_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="head_l1_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="head_l2_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="head_l3_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="head_l3_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.01568627 0.01568627 0.01568627 1.0" />
+    <material name="head_l3_material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="head_l3_material_3" specular="0.4000000000000001" shininess="0.001" rgba="0.50196078 0.50196078 0.50196078 1.0" />
+    <material name="head_l3_material_5" specular="0.4000000000000001" shininess="0.001" rgba="0.20000000 0.20000000 0.20000000 1.0" />
+    <material name="imu_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="lidar_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.03921569 0.03921569 0.03921569 1.0" />
+    <material name="torso_l1_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="torso_l1_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="torso_l1_material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.89803922 0.91764706 0.92941176 1.0" />
+    <material name="torso_l1_material_3" specular="0.4000000000000001" shininess="0.001" rgba="0.50196078 0.50196078 0.50196078 1.0" />
+    <material name="torso_l1_material_4" specular="0.4000000000000001" shininess="0.001" rgba="0.29803922 0.29803922 0.29803922 1.0" />
+    <material name="torso_l1_material_5" specular="0.4000000000000001" shininess="0.001" rgba="0.70588235 0.70588235 0.70588235 1.0" />
+    <material name="torso_l1_material_6" specular="0.4000000000000001" shininess="0.001" rgba="0.94117647 0.94117647 0.94117647 1.0" />
+    <material name="torso_l2_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.89803922 0.91764706 0.92941176 1.0" />
+    <material name="torso_l2_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="torso_l2_material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.50196078 0.50196078 0.50196078 1.0" />
+    <material name="torso_l2_material_3" specular="0.4000000000000001" shininess="0.001" rgba="0.70588235 0.70588235 0.70588235 1.0" />
+    <material name="torso_l2_material_4" specular="0.4000000000000001" shininess="0.001" rgba="0.25098039 0.25098039 0.25098039 1.0" />
+    <material name="torso_l2_material_5" specular="0.4000000000000001" shininess="0.001" rgba="0.29803922 0.29803922 0.29803922 1.0" />
+    <material name="torso_l2_material_6" specular="0.4000000000000001" shininess="0.001" rgba="0.89019608 0.89019608 0.91372549 1.0" />
+    <material name="torso_l2_material_7" specular="0.4000000000000001" shininess="0.001" rgba="0.64705882 0.61960784 0.58823529 1.0" />
+    <material name="torso_l2_material_8" specular="0.4000000000000001" shininess="0.001" rgba="0.69019608 0.69019608 0.69019608 1.0" />
+    <material name="torso_l2_material_9" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="torso_l3_material_0" specular="0.4000000000000001" shininess="0.001" rgba="1.00000000 0.00000000 0.00000000 1.0" />
+    <material name="torso_l3_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="torso_l3_material_2" specular="0.4000000000000001" shininess="0.001" rgba="1.00000000 0.93725490 0.13725490 1.0" />
+    <material name="torso_l3_material_3" specular="0.4000000000000001" shininess="0.001" rgba="0.50196078 0.50196078 0.50196078 1.0" />
+    <material name="torso_l3_material_4" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="torso_l3_material_5" specular="0.4000000000000001" shininess="0.001" rgba="0.70588235 0.70588235 0.70588235 1.0" />
+    <material name="torso_l3_material_6" specular="0.4000000000000001" shininess="0.001" rgba="0.79215686 0.81960784 0.93333333 1.0" />
+    <material name="torso_l3_material_7" specular="0.4000000000000001" shininess="0.001" rgba="0.77647059 0.75686275 0.73725490 1.0" />
+    <material name="torso_l3_material_9" specular="0.4000000000000001" shininess="0.001" rgba="0.79607843 0.82352941 0.93725490 1.0" />
+    <material name="ultrasonic_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="wheel_l1_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0" />
+    <material name="wheel_l1_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.77254902 0.75294118 0.73333333 1.0" />
+    <material name="wheel_l1_material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="wheel_l1_material_3" specular="0.4000000000000001" shininess="0.001" rgba="0.74901961 1.00000000 0.74901961 1.0" />
+    <material name="wheel_l1_material_4" specular="0.4000000000000001" shininess="0.001" rgba="0.79215686 0.81960784 0.92941176 1.0" />
+    <material name="wheel_l1_material_5" specular="0.4000000000000001" shininess="0.001" rgba="1.00000000 1.00000000 0.50196078 1.0" />
+    <material name="wheel_l2_material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0" />
+    <material name="wheel_l2_material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.80000000 0.80000000 0.80000000 1.0" />
+    <mesh name="base.obj" file="meshes/collision/base.obj" />
+    <mesh name="B_wheel_l2.obj" file="meshes/collision/B_wheel_l2.obj" />
+    <mesh name="wheel_l2.obj" file="meshes/collision/wheel_l2.obj" />
+    <mesh name="torso_l1.obj" file="meshes/collision/torso_l1.obj" />
+    <mesh name="torso_l2.obj" file="meshes/collision/torso_l2.obj" />
+    <mesh name="torso_l3.obj" file="meshes/collision/torso_l3.obj" />
+    <mesh name="head_l1.obj" file="meshes/collision/head_l1.obj" />
+    <mesh name="head_l2.obj" file="meshes/collision/head_l2.obj" />
+    <mesh name="head_l3.obj" file="meshes/collision/head_l3.obj" />
+    <mesh name="L_arm_l1.obj" file="meshes/collision/L_arm_l1.obj" />
+    <mesh name="arm_l2.obj" file="meshes/collision/arm_l2.obj" />
+    <mesh name="arm_l3.obj" file="meshes/collision/arm_l3.obj" />
+    <mesh name="arm_l4.obj" file="meshes/collision/arm_l4.obj" />
+    <mesh name="arm_l5.obj" file="meshes/collision/arm_l5.obj" />
+    <mesh name="L_arm_l6.obj" file="meshes/collision/L_arm_l6.obj" />
+    <mesh name="arm_l7.obj" file="meshes/collision/arm_l7.obj" />
+    <mesh name="arm_l8.obj" file="meshes/collision/arm_l8.obj" />
+    <mesh name="R_arm_l1.obj" file="meshes/collision/R_arm_l1.obj" />
+    <mesh name="R_arm_l6.obj" file="meshes/collision/R_arm_l6.obj" />
+    <mesh file="meshes/visual/B_wheel_l1/B_wheel_l1.obj" name="B_wheel_l1" />
+    <mesh file="meshes/visual/B_wheel_l2/B_wheel_l2_0.obj" name="B_wheel_l2_0" />
+    <mesh file="meshes/visual/B_wheel_l2/B_wheel_l2_1.obj" name="B_wheel_l2_1" />
+    <mesh file="meshes/visual/L_arm_l1/L_arm_l1_0.obj" name="L_arm_l1_0" />
+    <mesh file="meshes/visual/L_arm_l1/L_arm_l1_1.obj" name="L_arm_l1_1" />
+    <mesh file="meshes/visual/L_arm_l1/L_arm_l1_2.obj" name="L_arm_l1_2" />
+    <mesh file="meshes/visual/L_arm_l6/L_arm_l6.obj" name="L_arm_l6" />
+    <mesh file="meshes/visual/R_arm_l1/R_arm_l1_0.obj" name="R_arm_l1_0" />
+    <mesh file="meshes/visual/R_arm_l1/R_arm_l1_1.obj" name="R_arm_l1_1" />
+    <mesh file="meshes/visual/R_arm_l1/R_arm_l1_2.obj" name="R_arm_l1_2" />
+    <mesh file="meshes/visual/R_arm_l6/R_arm_l6.obj" name="R_arm_l6" />
+    <mesh file="meshes/visual/arm_l2/arm_l2.obj" name="arm_l2" />
+    <mesh file="meshes/visual/arm_l3/arm_l3.obj" name="arm_l3" />
+    <mesh file="meshes/visual/arm_l4/arm_l4.obj" name="arm_l4" />
+    <mesh file="meshes/visual/arm_l5/arm_l5.obj" name="arm_l5" />
+    <mesh file="meshes/visual/arm_l7/arm_l7.obj" name="arm_l7" />
+    <mesh file="meshes/visual/arm_l8/arm_l8_1.obj" name="arm_l8_1" />
+    <mesh file="meshes/visual/arm_l8/arm_l8_2.obj" name="arm_l8_2" />
+    <mesh file="meshes/visual/base/base_0.obj" name="base_0" />
+    <mesh file="meshes/visual/base/base_1.obj" name="base_1" />
+    <mesh file="meshes/visual/base/base_2.obj" name="base_2" />
+    <mesh file="meshes/visual/base/base_3.obj" name="base_3" />
+    <mesh file="meshes/visual/base/base_4.obj" name="base_4" />
+    <mesh file="meshes/visual/base/base_5.obj" name="base_5" />
+    <mesh file="meshes/visual/base/base_6.obj" name="base_6" />
+    <mesh file="meshes/visual/base/base_7.obj" name="base_7" />
+    <mesh file="meshes/visual/base_cam/base_cam.obj" name="base_cam" />
+    <mesh file="meshes/visual/head_l1/head_l1.obj" name="head_l1" />
+    <mesh file="meshes/visual/head_l2/head_l2.obj" name="head_l2" />
+    <mesh file="meshes/visual/head_l3/head_l3_0.obj" name="head_l3_0" />
+    <mesh file="meshes/visual/head_l3/head_l3_2.obj" name="head_l3_2" />
+    <mesh file="meshes/visual/head_l3/head_l3_3.obj" name="head_l3_3" />
+    <mesh file="meshes/visual/head_l3/head_l3_4.obj" name="head_l3_4" />
+    <mesh file="meshes/visual/head_l3/head_l3_5.obj" name="head_l3_5" />
+    <mesh file="meshes/visual/imu/imu.obj" name="imu" />
+    <mesh file="meshes/visual/lidar/lidar.obj" name="lidar" />
+    <mesh file="meshes/visual/torso_l1/torso_l1_0.obj" name="torso_l1_0" />
+    <mesh file="meshes/visual/torso_l1/torso_l1_1.obj" name="torso_l1_1" />
+    <mesh file="meshes/visual/torso_l1/torso_l1_2.obj" name="torso_l1_2" />
+    <mesh file="meshes/visual/torso_l1/torso_l1_3.obj" name="torso_l1_3" />
+    <mesh file="meshes/visual/torso_l1/torso_l1_4.obj" name="torso_l1_4" />
+    <mesh file="meshes/visual/torso_l1/torso_l1_5.obj" name="torso_l1_5" />
+    <mesh file="meshes/visual/torso_l1/torso_l1_6.obj" name="torso_l1_6" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_0.obj" name="torso_l2_0" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_1.obj" name="torso_l2_1" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_2.obj" name="torso_l2_2" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_3.obj" name="torso_l2_3" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_4.obj" name="torso_l2_4" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_5.obj" name="torso_l2_5" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_6.obj" name="torso_l2_6" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_7.obj" name="torso_l2_7" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_8.obj" name="torso_l2_8" />
+    <mesh file="meshes/visual/torso_l2/torso_l2_9.obj" name="torso_l2_9" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_0.obj" name="torso_l3_0" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_2.obj" name="torso_l3_2" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_3.obj" name="torso_l3_3" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_4.obj" name="torso_l3_4" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_5.obj" name="torso_l3_5" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_6.obj" name="torso_l3_6" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_7.obj" name="torso_l3_7" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_8.obj" name="torso_l3_8" />
+    <mesh file="meshes/visual/torso_l3/torso_l3_9.obj" name="torso_l3_9" />
+    <mesh file="meshes/visual/ultrasonic/ultrasonic.obj" name="ultrasonic" />
+    <mesh file="meshes/visual/wheel_l1/wheel_l1_0.obj" name="wheel_l1_0" />
+    <mesh file="meshes/visual/wheel_l1/wheel_l1_1.obj" name="wheel_l1_1" />
+    <mesh file="meshes/visual/wheel_l1/wheel_l1_2.obj" name="wheel_l1_2" />
+    <mesh file="meshes/visual/wheel_l1/wheel_l1_3.obj" name="wheel_l1_3" />
+    <mesh file="meshes/visual/wheel_l1/wheel_l1_4.obj" name="wheel_l1_4" />
+    <mesh file="meshes/visual/wheel_l1/wheel_l1_5.obj" name="wheel_l1_5" />
+    <mesh file="meshes/visual/wheel_l2/wheel_l2_0.obj" name="wheel_l2_0" />
+    <mesh file="meshes/visual/wheel_l2/wheel_l2_1.obj" name="wheel_l2_1" />
+    <mesh name="L_hand_base.obj" file="meshes/collision/L_hand_base.obj" />
+    <mesh name="R_hand_base.obj" file="meshes/collision/R_hand_base.obj" />
+    <mesh name="connector_visual.obj" file="meshes/visual/connector/connector.obj" />
+    <mesh name="L_hand_base_visual_0.obj" file="meshes/visual/L_hand_base/L_hand_base_0.obj" />
+    <mesh name="L_hand_base_visual_1.obj" file="meshes/visual/L_hand_base/L_hand_base_1.obj" />
+    <mesh name="R_hand_base_visual_0.obj" file="meshes/visual/R_hand_base/R_hand_base_0.obj" />
+    <mesh name="R_hand_base_visual_1.obj" file="meshes/visual/R_hand_base/R_hand_base_1.obj" />
+    <mesh name="th_l0.obj" file="meshes/collision/th_l0.obj" />
+    <mesh name="th_l0_visual.obj" file="meshes/visual/th_l0/th_l0.obj" />
+    <mesh name="th_l1.obj" file="meshes/collision/th_l1.obj" />
+    <mesh name="th_l1_visual.obj" file="meshes/visual/th_l1/th_l1.obj" />
+    <mesh name="th_l2.obj" file="meshes/collision/th_l2.obj" />
+    <mesh name="th_l2_visual_0.obj" file="meshes/visual/th_l2/th_l2_0.obj" />
+    <mesh name="th_l2_visual_1.obj" file="meshes/visual/th_l2/th_l2_1.obj" />
+    <mesh name="ff_l1.obj" file="meshes/collision/ff_l1.obj" />
+    <mesh name="ff_l1_visual.obj" file="meshes/visual/ff_l1/ff_l1.obj" />
+    <mesh name="ff_l2.obj" file="meshes/collision/ff_l2.obj" />
+    <mesh name="ff_l2_visual_0.obj" file="meshes/visual/ff_l2/ff_l2_0.obj" />
+    <mesh name="ff_l2_visual_1.obj" file="meshes/visual/ff_l2/ff_l2_1.obj" />
+    <mesh name="mf_l1.obj" file="meshes/collision/mf_l1.obj" />
+    <mesh name="mf_l1_visual.obj" file="meshes/visual/mf_l1/mf_l1.obj" />
+    <mesh name="mf_l2.obj" file="meshes/collision/mf_l2.obj" />
+    <mesh name="mf_l2_visual_0.obj" file="meshes/visual/mf_l2/mf_l2_0.obj" />
+    <mesh name="mf_l2_visual_1.obj" file="meshes/visual/mf_l2/mf_l2_1.obj" />
+    <mesh name="rf_l1.obj" file="meshes/collision/rf_l1.obj" />
+    <mesh name="rf_l1_visual.obj" file="meshes/visual/rf_l1/rf_l1.obj" />
+    <mesh name="rf_l2.obj" file="meshes/collision/rf_l2.obj" />
+    <mesh name="rf_l2_visual_0.obj" file="meshes/visual/rf_l2/rf_l2_0.obj" />
+    <mesh name="rf_l2_visual_1.obj" file="meshes/visual/rf_l2/rf_l2_1.obj" />
+    <mesh name="lf_l1.obj" file="meshes/collision/lf_l1.obj" />
+    <mesh name="lf_l1_visual.obj" file="meshes/visual/lf_l1/lf_l1.obj" />
+    <mesh name="lf_l2.obj" file="meshes/collision/lf_l2.obj" />
+    <mesh name="lf_l2_visual_0.obj" file="meshes/visual/lf_l2/lf_l2_0.obj" />
+    <mesh name="lf_l2_visual_1.obj" file="meshes/visual/lf_l2/lf_l2_1.obj" />
+  </asset>
+  <worldbody>
+    <!-- <light pos="0 0 1.vegavega5" dir="0 0 -1" directional="true" /> -->
+    <body name="base" pos="0.00000000 0.00000000 0.0" quat="1 0 0 0" childclass="robot">
+      <!-- <freejoint name="floating_base" /> -->
+      <geom name="base_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="base.obj" class="collision" />
+      <geom name="base_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_7" type="mesh" mesh="base_0" class="visual" />
+      <geom name="base_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_6" type="mesh" mesh="base_1" class="visual" />
+      <geom name="base_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_5" type="mesh" mesh="base_2" class="visual" />
+      <geom name="base_visual_3" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_4" type="mesh" mesh="base_3" class="visual" />
+      <geom name="base_visual_4" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_3" type="mesh" mesh="base_4" class="visual" />
+      <geom name="base_visual_5" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_2" type="mesh" mesh="base_5" class="visual" />
+      <geom name="base_visual_6" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_1" type="mesh" mesh="base_6" class="visual" />
+      <geom name="base_visual_7" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_material_0" type="mesh" mesh="base_7" class="visual" />
+      <body name="B_wheel_l1" pos="-0.265 0 0.044" quat="1.0 0.0 0.0 0.0">
+        <!-- <joint name="B_wheel_j1" type="hinge" ref="0.0" class="motor" axis="0 0 -1" /> -->
+        <inertial pos="-0.00642 0.00016 -0.01986" quat="1.0 0.0 0.0 0.0" mass="0.200" diaginertia="0.000117 0.0001096 0.0001304" />
+        <geom name="B_wheel_l1_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="B_wheel_l1_material_0" type="mesh" mesh="B_wheel_l1" class="visual" />
+        <body name="B_wheel_l2" pos="-0.03329 0.01652 -0.058" quat="1.0 0.0 0.0 0.0">
+          <!-- <joint name="B_wheel_j2" type="hinge" ref="0.0" class="motor" axis="0.04517 0.99898 0" /> -->
+          <inertial pos="-0.00068 -0.01498 6.93889E-18" quat="1.0 0.0 0.0 0.0" mass="0.300" diaginertia="0.0001345 0.0002201 0.0001343" />
+          <geom name="B_wheel_l2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="B_wheel_l2.obj" class="collision" />
+          <geom name="B_wheel_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="B_wheel_l2_material_1" type="mesh" mesh="B_wheel_l2_0" class="visual" />
+          <geom name="B_wheel_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="B_wheel_l2_material_0" type="mesh" mesh="B_wheel_l2_1" class="visual" />
+        </body>
+      </body>
+      <body name="R_wheel_l1" pos="0.185 -0.225 0.133" quat="1.0 0.0 0.0 0.0">
+        <!-- <joint name="R_wheel_j1" type="hinge" ref="0.0" class="motor" range="-2.722 2.722" axis="0 0 -1" /> -->
+        <inertial pos="7.45834E-05 0.03713 -0.03504" quat="1.0 0.0 0.0 0.0" mass="0.358" diaginertia="0.000664 0.0005757 0.0003543" />
+        <geom name="R_wheel_l1_visual_0" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l1_material_5" type="mesh" mesh="wheel_l1_0" class="visual" />
+        <geom name="R_wheel_l1_visual_1" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l1_material_4" type="mesh" mesh="wheel_l1_1" class="visual" />
+        <geom name="R_wheel_l1_visual_2" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l1_material_3" type="mesh" mesh="wheel_l1_2" class="visual" />
+        <geom name="R_wheel_l1_visual_3" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l1_material_2" type="mesh" mesh="wheel_l1_3" class="visual" />
+        <geom name="R_wheel_l1_visual_4" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l1_material_1" type="mesh" mesh="wheel_l1_4" class="visual" />
+        <geom name="R_wheel_l1_visual_5" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l1_material_0" type="mesh" mesh="wheel_l1_5" class="visual" />
+        <body name="R_wheel_l2" pos="0 0.0395 -0.1005" quat="1.0 0.0 0.0 0.0">
+          <!-- <joint name="R_wheel_j2" type="hinge" ref="0.0" class="motor" axis="0 -1 0" /> -->
+          <inertial pos="-7.83171E-18 -0.03937 0" quat="1.0 0.0 0.0 0.0" mass="3.7" diaginertia="0.00676 0.01139 0.00676" />
+          <geom name="R_wheel_l2_collision" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" type="mesh" mesh="wheel_l2.obj" class="collision" />
+          <geom name="R_wheel_l2_visual_0" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l2_material_1" type="mesh" mesh="wheel_l2_0" class="visual" />
+          <geom name="R_wheel_l2_visual_1" pos="0 0 0" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="wheel_l2_material_0" type="mesh" mesh="wheel_l2_1" class="visual" />
+        </body>
+      </body>
+      <body name="L_wheel_l1" pos="0.185 0.225 0.133" quat="1.0 0.0 0.0 0.0">
+        <!-- <joint name="L_wheel_j1" type="hinge" ref="0.0" class="motor" range="-2.722 2.722" axis="0 0 -1" /> -->
+        <inertial pos="-7.45834E-05 -0.03713 -0.03504" quat="1.0 0.0 0.0 0.0" mass="0.358" diaginertia="0.000664 0.0005757 0.0003543" />
+        <geom name="L_wheel_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l1_material_5" type="mesh" mesh="wheel_l1_0" class="visual" />
+        <geom name="L_wheel_l1_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l1_material_4" type="mesh" mesh="wheel_l1_1" class="visual" />
+        <geom name="L_wheel_l1_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l1_material_3" type="mesh" mesh="wheel_l1_2" class="visual" />
+        <geom name="L_wheel_l1_visual_3" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l1_material_2" type="mesh" mesh="wheel_l1_3" class="visual" />
+        <geom name="L_wheel_l1_visual_4" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l1_material_1" type="mesh" mesh="wheel_l1_4" class="visual" />
+        <geom name="L_wheel_l1_visual_5" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l1_material_0" type="mesh" mesh="wheel_l1_5" class="visual" />
+        <body name="L_wheel_l2" pos="0 -0.0395 -0.1005" quat="1.0 0.0 0.0 0.0">
+          <!-- <joint name="L_wheel_j2" type="hinge" ref="0.0" class="motor" axis="0 1 0" /> -->
+          <inertial pos="-1.64965E-17 0.03937 0" quat="1.0 0.0 0.0 0.0" mass="3.7" diaginertia="0.00676 0.01139 0.00676" />
+          <geom name="L_wheel_l2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="wheel_l2.obj" class="collision" />
+          <geom name="L_wheel_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l2_material_1" type="mesh" mesh="wheel_l2_0" class="visual" />
+          <geom name="L_wheel_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="wheel_l2_material_0" type="mesh" mesh="wheel_l2_1" class="visual" />
+        </body>
+      </body>
+      <body name="torso_l1" pos="-0.235 0.08 0.248" quat="1.0 0.0 0.0 0.0">
+        <joint name="torso_j1" type="hinge" ref="0.0" class="motor" range="0 1.570" axis="0 -1 0" />
+        <inertial pos="0.17712 -0.06463 0.03987" quat="1.0 0.0 0.0 0.0" mass="8.83234" diaginertia="0.03291 0.22172 0.20771" />
+        <geom name="torso_l1_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="torso_l1.obj" class="collision" />
+        <geom name="torso_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l1_material_6" type="mesh" mesh="torso_l1_0" class="visual" />
+        <geom name="torso_l1_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l1_material_5" type="mesh" mesh="torso_l1_1" class="visual" />
+        <geom name="torso_l1_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l1_material_4" type="mesh" mesh="torso_l1_2" class="visual" />
+        <geom name="torso_l1_visual_3" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l1_material_3" type="mesh" mesh="torso_l1_3" class="visual" />
+        <geom name="torso_l1_visual_4" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l1_material_2" type="mesh" mesh="torso_l1_4" class="visual" />
+        <geom name="torso_l1_visual_5" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l1_material_1" type="mesh" mesh="torso_l1_5" class="visual" />
+        <geom name="torso_l1_visual_6" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l1_material_0" type="mesh" mesh="torso_l1_6" class="visual" />
+        <body name="torso_l2" pos="0.396 -0.06 0.082" quat="1.0 0.0 0.0 0.0">
+          <joint name="torso_j2" type="hinge" ref="0.0" class="motor" range="0 3.141" axis="0 1 0" />
+          <inertial pos="-0.19819 -0.02173 0.04732" quat="1.0 0.0 0.0 0.0" mass="14.58926" diaginertia="0.05538 0.42465 0.39283" />
+          <geom name="torso_l2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="torso_l2.obj" class="collision" />
+          <geom name="torso_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_9" type="mesh" mesh="torso_l2_0" class="visual" />
+          <geom name="torso_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_8" type="mesh" mesh="torso_l2_1" class="visual" />
+          <geom name="torso_l2_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_7" type="mesh" mesh="torso_l2_2" class="visual" />
+          <geom name="torso_l2_visual_3" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_6" type="mesh" mesh="torso_l2_3" class="visual" />
+          <geom name="torso_l2_visual_4" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_5" type="mesh" mesh="torso_l2_4" class="visual" />
+          <geom name="torso_l2_visual_5" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_4" type="mesh" mesh="torso_l2_5" class="visual" />
+          <geom name="torso_l2_visual_6" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_3" type="mesh" mesh="torso_l2_6" class="visual" />
+          <geom name="torso_l2_visual_7" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_2" type="mesh" mesh="torso_l2_7" class="visual" />
+          <geom name="torso_l2_visual_8" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_1" type="mesh" mesh="torso_l2_8" class="visual" />
+          <geom name="torso_l2_visual_9" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l2_material_0" type="mesh" mesh="torso_l2_9" class="visual" />
+          <body name="torso_l3" pos="-0.40718 0.058 0.09764" quat="1.0 0.0 0.0 0.0">
+            <joint name="torso_j3" type="hinge" ref="0.0" class="motor" range="-1.570 1.570" axis="0 -1 0" />
+            <inertial pos="-0.05623 -0.08424 0.25675" quat="1.0 0.0 0.0 0.0" mass="5.32886" diaginertia="0.11076 0.10555 0.02731" />
+            <geom name="torso_l3_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="torso_l3.obj" class="collision" />
+            <geom name="torso_l3_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_9" type="mesh" mesh="torso_l3_0" class="visual" />
+            <geom name="torso_l3_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_7" type="mesh" mesh="torso_l3_2" class="visual" />
+            <geom name="torso_l3_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_6" type="mesh" mesh="torso_l3_3" class="visual" />
+            <geom name="torso_l3_visual_3" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_5" type="mesh" mesh="torso_l3_4" class="visual" />
+            <geom name="torso_l3_visual_4" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_4" type="mesh" mesh="torso_l3_5" class="visual" />
+            <geom name="torso_l3_visual_5" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_3" type="mesh" mesh="torso_l3_6" class="visual" />
+            <geom name="torso_l3_visual_6" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_2" type="mesh" mesh="torso_l3_7" class="visual" />
+            <geom name="torso_l3_visual_7" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_1" type="mesh" mesh="torso_l3_8" class="visual" />
+            <geom name="torso_l3_visual_8" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="torso_l3_material_0" type="mesh" mesh="torso_l3_9" class="visual" />
+            <body name="arm_center" pos="-0.05908 -0.078 0.44528" quat="1.0 0.0 0.0 0.0">
+              <body name="head_l1" pos="-0.0735 -0.0725 0.014" quat="1.0 0.0 0.0 0.0">
+                <joint name="head_j1" type="hinge" ref="0.0" class="motor" range="-1.483 1.483" axis="0 1 0" />
+                <inertial pos="1.30097E-05 0.07221 -0.02629" quat="1.0 0.0 0.0 0.0" mass="0.4378" diaginertia="0.00043 0.00025 0.00051" />
+                <geom name="head_l1_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="head_l1.obj" class="collision" />
+                <geom name="head_l1_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="head_l1_material_0" type="mesh" mesh="head_l1" class="visual" />
+                <body name="head_l2" pos="0 0.0725 -0.0035" quat="1.0 0.0 0.0 0.0">
+                  <joint name="head_j2" type="hinge" ref="0.0" class="motor" range="-2.792 2.792" axis="0 0 1" />
+                  <inertial pos="3.533E-05 0.01618 0.03389" quat="1.0 0.0 0.0 0.0" mass="0.60772" diaginertia="0.00052 0.00039 0.0005" />
+                  <geom name="head_l2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="head_l2.obj" class="collision" />
+                  <geom name="head_l2_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="head_l2_material_0" type="mesh" mesh="head_l2" class="visual" />
+                  <body name="head_l3" pos="0 0.002 0.0495" quat="1.0 0.0 0.0 0.0">
+                    <joint name="head_j3" type="hinge" ref="0.0" class="motor" range="-1.378 1.483" axis="0 -1 0" />
+                    <inertial pos="0.00816 -0.00315 0.03745" quat="1.0 0.0 0.0 0.0" mass="0.63278" diaginertia="0.00083 0.00034 0.00078" />
+                    <geom name="head_l3_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="head_l3.obj" class="collision" />
+                    <geom name="head_l3_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="head_l3_material_5" type="mesh" mesh="head_l3_0" class="visual" />
+                    <geom name="head_l3_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="head_l3_material_3" type="mesh" mesh="head_l3_2" class="visual" />
+                    <geom name="head_l3_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="head_l3_material_2" type="mesh" mesh="head_l3_3" class="visual" />
+                    <geom name="head_l3_visual_3" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="head_l3_material_1" type="mesh" mesh="head_l3_4" class="visual" />
+                    <geom name="head_l3_visual_4" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="head_l3_material_0" type="mesh" mesh="head_l3_5" class="visual" />
+                    <body name="zed_depth_frame" pos="0.025 0.023 0.0489" quat="0.5000031633974483 -0.4999999999899929 0.49999683660255156 -0.4999999999899929" />
+                    <body name="zed_left_camera" pos="0.0365 0.023 0.0489" quat="0.5000031633974483 -0.4999999999899929 0.49999683660255156 -0.4999999999899929" />
+                    <body name="zed_right_camera" pos="0.0365 -0.027 0.0489" quat="0.5000031633974483 -0.4999999999899929 0.49999683660255156 -0.4999999999899929" />
+                  </body>
+                </body>
+              </body>
+              <body name="L_arm_l1" pos="0 0.16946 0" quat="1.0 0.0 0.0 0.0">
+                <joint name="L_arm_j1" type="hinge" ref="0.0" class="motor" range="-3.071 3.071" axis="0 1 0" />
+                <inertial pos="0.0285 0.05287 0.00576" quat="1.0 0.0 0.0 0.0" mass="1.41351" diaginertia="0.00168 0.00185 0.00212" />
+                <geom name="L_arm_l1_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="L_arm_l1.obj" class="collision" />
+                <geom name="L_arm_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="L_arm_l1_material_2" type="mesh" mesh="L_arm_l1_0" class="visual" />
+                <geom name="L_arm_l1_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="L_arm_l1_material_1" type="mesh" mesh="L_arm_l1_1" class="visual" />
+                <geom name="L_arm_l1_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="L_arm_l1_material_0" type="mesh" mesh="L_arm_l1_2" class="visual" />
+                <body name="L_arm_l2" pos="0.04 0.06 0.0454" quat="1.0 0.0 0.0 0.0">
+                  <joint name="L_arm_j2" type="hinge" ref="0.0" class="motor" range="-0.453 1.553" axis="0 0 1" />
+                  <inertial pos="0.08194 -1.45468E-06 -0.04058" quat="1.0 0.0 0.0 0.0" mass="1.40594" diaginertia="0.00168 0.00441 0.00412" />
+                  <geom name="L_arm_l2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l2.obj" class="collision" />
+                  <geom name="L_arm_l2_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l2_material_0" type="mesh" mesh="arm_l2" class="visual" />
+                  <body name="L_arm_l3" pos="0.1644 0 -0.043" quat="1.0 0.0 0.0 0.0">
+                    <joint name="L_arm_j3" type="hinge" ref="0.0" class="motor" range="-3.071 3.071" axis="1 0 0" />
+                    <inertial pos="0.07978 0.00403 0.0398" quat="1.0 0.0 0.0 0.0" mass="1.16094" diaginertia="0.0017 0.00337 0.00257" />
+                    <geom name="L_arm_l3_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l3.obj" class="collision" />
+                    <geom name="L_arm_l3_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l3_material_0" type="mesh" mesh="arm_l3" class="visual" />
+                    <body name="L_arm_l4" pos="0.113 0.0433 0.06" quat="1.0 0.0 0.0 0.0">
+                      <joint name="L_arm_j4" type="hinge" ref="0.0" class="motor" range="-3.071 0.244" axis="0 1 0" />
+                      <inertial pos="0.09219 -0.03791 -0.02953" quat="1.0 0.0 0.0 0.0" mass="0.93204" diaginertia="0.00101 0.00305 0.00274" />
+                      <geom name="L_arm_l4_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l4.obj" class="collision" />
+                      <geom name="L_arm_l4_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l4_material_0" type="mesh" mesh="arm_l4" class="visual" />
+                      <body name="L_arm_l5" pos="0.1938 -0.0434 -0.04" quat="1.0 0.0 0.0 0.0">
+                        <joint name="L_arm_j5" type="hinge" ref="0.0" class="motor" range="-3.071 3.071" axis="1 0 0" />
+                        <inertial pos="0.06497 -0.00266 1.20027E-05" quat="1.0 0.0 0.0 0.0" mass="0.64582" diaginertia="0.00034 0.00056 0.00052" />
+                        <geom name="L_arm_l5_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l5.obj" class="collision" />
+                        <geom name="L_arm_l5_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l5_material_0" type="mesh" mesh="arm_l5" class="visual" />
+                        <body name="L_arm_l6" pos="0.0762 0.0319 0" quat="1.0 0.0 0.0 0.0">
+                          <joint name="L_arm_j6" type="hinge" ref="0.0" class="motor" range="-1.396 1.396" axis="0 1 0" />
+                          <inertial pos="0.05526 -0.02615 -0.00267" quat="1.0 0.0 0.0 0.0" mass="0.5542" diaginertia="0.00029 0.00042 0.00038" />
+                          <geom name="L_arm_l6_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="L_arm_l6.obj" class="collision" />
+                          <geom name="L_arm_l6_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="L_arm_l6_material_0" type="mesh" mesh="L_arm_l6" class="visual" />
+                          <body name="L_arm_l7" pos="0.065 -0.032 0.0319" quat="1.0 0.0 0.0 0.0">
+                            <joint name="L_arm_j7" type="hinge" ref="0.0" class="motor" range="-1.378 1.117" axis="0 0 1" />
+                            <inertial pos="0.032 5.48376E-05 -0.01786" quat="1.0 0.0 0.0 0.0" mass="0.35802" diaginertia="0.0002 0.00031 0.00034" />
+                            <geom name="L_arm_l7_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l7.obj" class="collision" />
+                            <geom name="L_arm_l7_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l7_material_0" type="mesh" mesh="arm_l7" class="visual" />
+                            <body name="L_arm_l8" pos="0.11597 0 -0.032" quat="0.7071090180427968 0.0 0.7071045443232221 0.0">
+                              <inertial pos="-0.01782 -0.00021 0.00027" quat="1.0 0.0 0.0 0.0" mass="0.20064" diaginertia="9.24605e-05 5.72813e-05 5.67577e-05" />
+                              <geom name="L_arm_l8_collision" pos="0 0 0" quat="0.7071090180427968 0.0 -0.7071045443232221 0.0" type="mesh" mesh="arm_l8.obj" class="collision" />
+                              <geom name="L_arm_l8_visual_0" pos="0 0 0" quat="0.7071090180427968 0.0 -0.7071045443232221 0.0" material="arm_l8_material_1" type="mesh" mesh="arm_l8_1" class="visual" />
+                              <geom name="L_arm_l8_visual_1" pos="0 0 0" quat="0.7071090180427968 0.0 -0.7071045443232221 0.0" material="arm_l8_material_0" type="mesh" mesh="arm_l8_2" class="visual" />
+                              <body name="L_ee" pos="0 0 0" quat="0.7071090180427968 0.0 0.0 -0.7071045443232221" />
+                                <body name="L_hand_base" pos="0.00019 0.00390 0.00014" quat="0.5000031633974483 -0.4999999999899929 0.4999999999899929 0.49999683660255156">
+                                  <inertial pos="-0.04878 0.00248 -0.00378" quat="1.0 0.0 0.0 0.0" mass="0.05182" diaginertia="1.90439e-05 2.43366e-05 3.5801e-05" />
+                                  <geom name="L_hand_base_collision_0" pos="-0.011 0 -0.00375" quat="0.7071797249615662 0.0 0.707033829886013 0.0" type="cylinder" size="0.0245 0.011" rgba="0 0 0 0" />
+                                  <geom name="L_hand_base_collision_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="L_hand_base.obj" rgba="0 0 0 0" />
+                                  <geom name="connector_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="connector_visual.obj" class="visual" />
+                                  <geom name="L_hand_base_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="L_hand_base_visual_0.obj" class="visual" />
+                                  <geom name="L_hand_base_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="L_hand_base_visual_1.obj" class="visual" />
+                                  <body name="L_th_l0" pos="-0.04608 0.01984 -0.02684" quat="0.9940212430883849 -0.0007220406894144503 -0.10898567936269123 -0.006585487082790464">
+                                    <joint name="L_th_j0" type="hinge" range="-0.0158 1.605" axis="-1 0 0" />
+                                    <inertial pos="0.00118 0.00613 -0.00211" quat="1.0 0.0 0.0 0.0" mass="0.00232" diaginertia="1.75839e-07 1.47406e-07 1.75736e-07" />
+                                    <geom name="L_th_l0_collision_0" pos="0 0 -0.00580" quat="1.3267948966775328e-06 0.9999999999991198 0.0 0.0" type="mesh" mesh="th_l0.obj" rgba="0 0 0 0" />
+                                    <geom name="L_th_l0_visual_0" pos="0 0 -0.00580" quat="1.3267948966775328e-06 0.9999999999991198 0.0 0.0" material="default_material" type="mesh" mesh="th_l0_visual.obj" class="visual" />
+                                    <body name="L_th_l1" pos="-0.00675 0.02098 -0.00270" quat="0.9999791019602884 0.0 0.0 0.006464954964661678">
+                                      <joint name="L_th_j1" type="hinge" range="-0.3468 0.1834" axis="0 0 -1" />
+                                      <inertial pos="-0.01803 0.00796 -0.00016" quat="1.0 0.0 0.0 0.0" mass="0.00666" diaginertia="4.79346e-07 1.88643e-06 2.21298e-06" />
+                                      <geom name="L_th_l1_collision_0" pos="0 0 0" quat="0.0007963267107332633 0.0 0.0 0.9999996829318346" type="mesh" mesh="th_l1.obj" rgba="0 0 0 0" />
+                                      <geom name="L_th_l1_visual" pos="0 0 0" quat="0.0007963267107332633 0.0 0.0 0.9999996829318346" material="default_material" type="mesh" mesh="th_l1_visual.obj" class="visual" />
+                                      <body name="L_th_l2" pos="-0.05088 0.01301 -0.00202" quat="1.0 0.0 0.0 0.0">
+                                        <joint name="L_th_j2" type="hinge" range="-0.4298 0.2731" axis="0 0 -1" />
+                                        <inertial pos="-0.00825 0.00781 0.00190" quat="1.0 0.0 0.0 0.0" mass="0.00503" diaginertia="1.99364e-07 2.67949e-07 2.35219e-07" />
+                                        <geom name="L_th_l2_collision_0" pos="0 0 0.00380" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" type="mesh" mesh="th_l2.obj" rgba="0 0 0 0" />
+                                        <geom name="L_th_l2_visual_0" pos="0 0 0.00380" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="default_material" type="mesh" mesh="th_l2_visual_0.obj" class="visual" />
+                                        <geom name="L_th_l2_visual_1" pos="0 0 0.00380" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="default_material" type="mesh" mesh="th_l2_visual_1.obj" class="visual" />
+                                        <body name="L_th_tip" pos="-0.0230 0.0151 0.0018" quat="1.0 0.0 0.0 0.0" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                  <body name="L_ff_l1" pos="-0.11269 0.03067 -0.00116" quat="0.998186460029187 -0.04375257024373369 -0.001810988858448016 -0.04130646354775882">
+                                    <joint name="L_ff_j1" type="hinge" range="-1.0946 0.2891" axis="0 1 0" />
+                                    <inertial pos="-0.01602 -9.85142E-05 -0.00754" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="6.86607e-08 1.54822e-07 1.62362e-07" />
+                                    <geom name="L_ff_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="L_ff_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l1_visual.obj" class="visual" />
+                                    <body name="L_ff_l2" pos="-0.03406 0 -0.01141" quat="0.99999999875 0.0 0.0 -4.999999997916667e-05">
+                                      <joint name="L_ff_j2" type="hinge" range="-1.2101 0.3681" axis="0 1 0" />
+                                      <inertial pos="-0.01405 -9.47216E-05 -0.01877" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.83569e-07 5.74333e-07 2.66485e-07" />
+                                      <geom name="L_ff_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="L_ff_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l2_visual_0.obj" class="visual" />
+                                      <geom name="L_ff_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l2_visual_1.obj" class="visual" />
+                                      <body name="L_ff_tip" pos="-0.0300 0.0 -0.0400" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                  <body name="L_mf_l1" pos="-0.11597 0.01047 0.00314" quat="0.999978054767766 0.0 0.0 -0.006624951537541248">
+                                    <joint name="L_mf_j1" type="hinge" range="-1.0844 0.2801" axis="0 1 0" />
+                                    <inertial pos="0.03832 -0.00051 -0.01587" quat="1.0 0.0 0.0 0.0" mass="0.10211" diaginertia="9.82031e-05 0.000271614 0.000310529" />
+                                    <geom name="L_mf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="L_mf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l1_visual.obj" class="visual" />
+                                    <body name="L_mf_l2" pos="-0.03829 0 -0.01467" quat="1.0 0.0 0.0 0.0">
+                                      <joint name="L_mf_j2" type="hinge" range="-1.2026 0.3533" axis="0 1 0" />
+                                      <inertial pos="-0.01427 9.50657E-05 -0.01861" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.77813e-07 5.74328e-07 2.72236e-07" />
+                                      <geom name="L_mf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="L_mf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l2_visual_0.obj" class="visual" />
+                                      <geom name="L_mf_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l2_visual_1.obj" class="visual" />
+                                      <body name="L_mf_tip" pos="-0.0304 0.0 -0.0397" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                  <body name="L_rf_l1" pos="-0.11324 -0.00937 0.00239" quat="0.9995995817253195 0.0 0.0 0.028296222620099794">
+                                    <joint name="L_rf_j1" type="hinge" range="-1.0154 0.2840" axis="0 1 0" />
+                                    <inertial pos="-0.01575 -9.85177E-05 -0.00809" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="7.066e-08 1.54825e-07 1.60367e-07" />
+                                    <geom name="L_rf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="L_rf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l1_visual.obj" class="visual" />
+                                    <body name="L_rf_l2" pos="-0.03364 0 -0.01258" quat="0.99999999875 0.0 0.0 -4.999999997916667e-05">
+                                      <joint name="L_rf_j2" type="hinge" range="-1.1156 0.3599" axis="0 1 0" />
+                                      <inertial pos="-0.01273 -9.38053E-05 -0.01968" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="4.17201e-07 5.74059e-07 2.32587e-07" />
+                                      <geom name="L_rf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="L_rf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l2_visual_0.obj" class="visual" />
+                                      <geom name="L_rf_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l2_visual_1.obj" class="visual" />
+                                      <body name="L_rf_tip" pos="-0.0272 0 -0.0420" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                  <body name="L_lf_l1" pos="-0.10947 -0.02964 -0.00017" quat="0.9972975934166506 0.04382342613518636 -0.0025903000077536265 0.05890931872803518">
+                                    <joint name="L_lf_j1" type="hinge" range="-1.0118 0.2811" axis="0 1 0" />
+                                    <inertial pos="-0.01409 0.00010 -0.00740" quat="1.0 0.0 0.0 0.0" mass="0.00137" diaginertia="6.23124e-08 1.12813e-07 1.20866e-07" />
+                                    <geom name="L_lf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="L_lf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l1_visual.obj" class="visual" />
+                                    <body name="L_lf_l2" pos="-0.02974 5.03150E-05 -0.01163" quat="0.9999999999445859 1.0527499999805544e-05 0.0 0.0">
+                                      <joint name="L_lf_j2" type="hinge" range="-1.1073 0.4014" axis="0 1 0" />
+                                      <inertial pos="-0.00835 -0.00012 -0.01408" quat="1.0 0.0 0.0 0.0" mass="0.00263" diaginertia="1.24027e-07 1.5321e-07 7.25224e-08" />
+                                      <geom name="L_lf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="L_lf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l2_visual_0.obj" class="visual" />
+                                      <geom name="L_lf_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l2_visual_1.obj" class="visual" />
+                                      <body name="L_lf_tip" pos="-0.0182 0 -0.0306" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+              <body name="R_arm_l1" pos="0 -0.16946 0" quat="1.0 0.0 0.0 0.0">
+                <joint name="R_arm_j1" type="hinge" ref="0.0" class="motor" range="-3.071 3.071" axis="0 -1 0" />
+                <inertial pos="0.02833 -0.05 0.0054" quat="1.0 0.0 0.0 0.0" mass="1.42401" diaginertia="0.00159 0.00166 0.00202" />
+                <geom name="R_arm_l1_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="R_arm_l1.obj" class="collision" />
+                <geom name="R_arm_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="R_arm_l1_material_2" type="mesh" mesh="R_arm_l1_0" class="visual" />
+                <geom name="R_arm_l1_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="R_arm_l1_material_1" type="mesh" mesh="R_arm_l1_1" class="visual" />
+                <geom name="R_arm_l1_visual_2" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="R_arm_l1_material_0" type="mesh" mesh="R_arm_l1_2" class="visual" />
+                <body name="R_arm_l2" pos="0.04 -0.06 0.0454" quat="1.0 0.0 0.0 0.0">
+                  <joint name="R_arm_j2" type="hinge" ref="0.0" class="motor" range="-1.553 0.453" axis="0 0 1" />
+                  <inertial pos="0.08749 -1.34526E-06 -0.04135" quat="1.0 0.0 0.0 0.0" mass="1.40595" diaginertia="0.00168 0.00441 0.00412" />
+                  <geom name="R_arm_l2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l2.obj" class="collision" />
+                  <geom name="R_arm_l2_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l2_material_0" type="mesh" mesh="arm_l2" class="visual" />
+                  <body name="R_arm_l3" pos="0.1644 0 -0.043" quat="1.0 0.0 0.0 0.0">
+                    <joint name="R_arm_j3" type="hinge" ref="0.0" class="motor" range="-3.071 3.071" axis="1 0 0" />
+                    <inertial pos="0.08127 0.00414 0.04053" quat="1.0 0.0 0.0 0.0" mass="1.1608" diaginertia="0.0017 0.00337 0.00257" />
+                    <geom name="R_arm_l3_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l3.obj" class="collision" />
+                    <geom name="R_arm_l3_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l3_material_0" type="mesh" mesh="arm_l3" class="visual" />
+                    <body name="R_arm_l4" pos="0.113 0.0433 0.06" quat="1.0 0.0 0.0 0.0">
+                      <joint name="R_arm_j4" type="hinge" ref="0.0" class="motor" range="-3.071 0.244" axis="0 1 0" />
+                      <inertial pos="0.07728 -0.03736 -0.02906" quat="1.0 0.0 0.0 0.0" mass="0.93204" diaginertia="0.00101 0.00305 0.00274" />
+                      <geom name="R_arm_l4_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l4.obj" class="collision" />
+                      <geom name="R_arm_l4_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l4_material_0" type="mesh" mesh="arm_l4" class="visual" />
+                      <body name="R_arm_l5" pos="0.1938 -0.0434 -0.04" quat="1.0 0.0 0.0 0.0">
+                        <joint name="R_arm_j5" type="hinge" ref="0.0" class="motor" range="-3.071 3.071" axis="1 0 0" />
+                        <inertial pos="0.06457 0.0025 -1.30383E-05" quat="1.0 0.0 0.0 0.0" mass="0.64582" diaginertia="0.00034 0.00056 0.00052" />
+                        <geom name="R_arm_l5_collision" pos="0 0 0" quat="1.3267948966775328e-06 0.9999999999991198 0.0 0.0" type="mesh" mesh="arm_l5.obj" class="collision" />
+                        <geom name="R_arm_l5_visual" pos="0 0 0" quat="1.3267948966775328e-06 0.9999999999991198 0.0 0.0" material="arm_l5_material_0" type="mesh" mesh="arm_l5" class="visual" />
+                        <body name="R_arm_l6" pos="0.0762 -0.0319 0" quat="1.0 0.0 0.0 0.0">
+                          <joint name="R_arm_j6" type="hinge" ref="0.0" class="motor" range="-1.396 1.396" axis="0 -1 0" />
+                          <inertial pos="0.05525 0.02614 -0.00267" quat="1.0 0.0 0.0 0.0" mass="0.55372" diaginertia="0.00029 0.00042 0.00038" />
+                          <geom name="R_arm_l6_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="R_arm_l6.obj" class="collision" />
+                          <geom name="R_arm_l6_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="R_arm_l6_material_0" type="mesh" mesh="R_arm_l6" class="visual" />
+                          <body name="R_arm_l7" pos="0.065 0.032 0.0319" quat="1.0 0.0 0.0 0.0">
+                            <joint name="R_arm_j7" type="hinge" ref="0.0" class="motor" range="-1.117 1.378" axis="0 0 1" />
+                            <inertial pos="0.03048 5.11736E-05 -0.01709" quat="1.0 0.0 0.0 0.0" mass="0.35802" diaginertia="0.0002 0.00031 0.00034" />
+                            <geom name="R_arm_l7_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_l7.obj" class="collision" />
+                            <geom name="R_arm_l7_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="arm_l7_material_0" type="mesh" mesh="arm_l7" class="visual" />
+                            <body name="R_arm_l8" pos="0.11597 0 -0.032" quat="0.7071090180427968 0.0 0.7071045443232221 0.0">
+                              <inertial pos="-0.01782 1.03176E-06 0.00027" quat="1.0 0.0 0.0 0.0" mass="0.20064" diaginertia="9.24605e-05 5.72813e-05 5.67577e-05" />
+                              <geom name="R_arm_l8_collision" pos="0 0 0" quat="0.7071090180427968 0.0 -0.7071045443232221 0.0" type="mesh" mesh="arm_l8.obj" class="collision" />
+                              <geom name="R_arm_l8_visual_0" pos="0 0 0" quat="0.7071090180427968 0.0 -0.7071045443232221 0.0" material="arm_l8_material_1" type="mesh" mesh="arm_l8_1" class="visual" />
+                              <geom name="R_arm_l8_visual_1" pos="0 0 0" quat="0.7071090180427968 0.0 -0.7071045443232221 0.0" material="arm_l8_material_0" type="mesh" mesh="arm_l8_2" class="visual" />
+                              <body name="R_ee" pos="0 0 0" quat="0.7071090180427968 0.0 0.0 0.7071045443232221" />
+                              <body name="R_hand_base" pos="0.00019 -0.00390 0.00014" quat="0.5000031633974483 0.4999999999899929 0.4999999999899929 -0.49999683660255156">
+                                  <inertial pos="-0.04133 -0.00272 -0.00667" quat="1.0 0.0 0.0 0.0" mass="0.03659" diaginertia="1.14586e-05 9.13975e-06 1.41942e-05" />
+                                  <geom name="R_hand_base_collision_0" pos="-0.011 0 -0.00375" quat="0.7071797249615662 0.0 0.707033829886013 0.0" type="cylinder" size="0.0245 0.011" rgba="0 0 0 0" />
+                                  <geom name="R_hand_base_collision_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="R_hand_base.obj" rgba="0 0 0 0" />
+                                  <geom name="R_hand_base_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="R_hand_base_visual_0.obj" class="visual" />
+                                  <geom name="R_hand_base_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="R_hand_base_visual_1.obj" class="visual" />
+                                  <body name="R_th_l0" pos="-0.04608 -0.01984 -0.02687" quat="0.9940212557598971 -0.0007043800482859707 -0.10899501732041315 0.006429085906081568">
+                                    <joint name="R_th_j0" type="hinge" range="-0.0158 1.605" axis="1 0 0" />
+                                    <inertial pos="0.00118 -0.00613 -0.00213" quat="1.0 0.0 0.0 0.0" mass="0.00232" diaginertia="1.75838e-07 1.47472e-07 1.75668e-07" />
+                                    <geom name="R_th_l0_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="th_l0.obj" rgba="0 0 0 0" />
+                                    <geom name="R_th_l0_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="th_l0_visual.obj" class="visual" />
+                                    <body name="R_th_l1" pos="-0.00675 -0.02097 -0.00276" quat="-1.0676136183979842e-05 0.006446304330938691 0.999978176212229 0.0014464251648291905">
+                                      <joint name="R_th_j1" type="hinge" range="-0.3468 0.1834" axis="0 0 -1" />
+                                      <inertial pos="0.01732 -0.00805 -0.00337" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="2.66072e-07 1.00883e-06 1.17421e-06" />
+                                      <geom name="R_th_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="th_l1.obj" rgba="0 0 0 0" />
+                                      <geom name="R_th_l1_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="th_l1_visual.obj" class="visual" />
+                                      <body name="R_th_l2" pos="0.05088 -0.01301 0.00202" quat="1.0 0.0 0.0 0.0">
+                                        <joint name="R_th_j2" type="hinge" range="-0.4298 0.2731" axis="0 0 -1" />
+                                        <inertial pos="0.00825 -0.00781 -0.00190" quat="1.0 0.0 0.0 0.0" mass="0.00503" diaginertia="1.99369e-07 2.67971e-07 2.35242e-07" />
+                                        <geom name="R_th_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="th_l2.obj" rgba="0 0 0 0" />
+                                        <geom name="R_th_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="th_l2_visual_0.obj" class="visual" />
+                                        <geom name="R_th_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="th_l2_visual_1.obj" class="visual" />
+                                        <body name="R_th_tip" pos="0.0230 -0.0151 -0.0018" quat="1.0 0.0 0.0 0.0" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                  <body name="R_ff_l1" pos="-0.11269 -0.03066 -0.00119" quat="0.998186460029187 0.04375257024373369 -0.001810988858448016 0.04130646354775882">
+                                    <joint name="R_ff_j1" type="hinge" range="-1.0946 0.2891" axis="0 1 0" />
+                                    <inertial pos="-0.01602 0.00010 -0.00754" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="6.86667e-08 1.54849e-07 1.62393e-07" />
+                                    <geom name="R_ff_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="R_ff_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l1_visual.obj" class="visual" />
+                                    <body name="R_ff_l2" pos="-0.03406 0 -0.01141" quat="0.9999999986375 -1.4999999980687502e-05 -7.499999996593751e-10 4.999999997354167e-05">
+                                      <joint name="R_ff_j2" type="hinge" range="-1.2101 0.3681" axis="0 1 0" />
+                                      <inertial pos="-0.01405 0.00009 -0.01877" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.83689e-07 5.74504e-07 2.66541e-07" />
+                                      <geom name="R_ff_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="R_ff_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l2_visual_0.obj" class="visual" />
+                                      <geom name="R_ff_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l2_visual_1.obj" class="visual" />
+                                      <body name="R_ff_tip" pos="-0.0300 0.0 -0.0400" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                  <body name="R_mf_l1" pos="-0.11597 -0.01047 0.00312" quat="0.999978054767766 0.0 0.0 0.006624951537541248">
+                                    <joint name="R_mf_j1" type="hinge" range="-1.0844 0.2801" axis="0 1 0" />
+                                    <inertial pos="-0.01788 -0.00010 -0.00978" quat="1.0 0.0 0.0 0.0" mass="0.00190" diaginertia="9.59615e-08 2.34143e-07 2.28131e-07" />
+                                    <geom name="R_mf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="R_mf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l1_visual.obj" class="visual" />
+                                    <body name="R_mf_l2" pos="-0.03829 0 -0.01467" quat="1.0 0.0 0.0 0.0">
+                                      <joint name="R_mf_j2" type="hinge" range="-1.2026 0.3533" axis="0 1 0" />
+                                      <inertial pos="-0.01427 -0.00009 -0.01861" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.77923e-07 5.74486e-07 2.72289e-07" />
+                                      <geom name="R_mf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="R_mf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l2_visual_0.obj" class="visual" />
+                                      <geom name="R_mf_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l2_visual_1.obj" class="visual" />
+                                      <body name="R_mf_tip" pos="-0.0304 0.0 -0.0397" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                  <body name="R_rf_l1" pos="-0.11324 0.00937 0.00237" quat="0.9995995817253195 0.0 0.0 -0.028296222620099794">
+                                    <joint name="R_rf_j1" type="hinge" range="-1.0154 0.2840" axis="0 1 0" />
+                                    <inertial pos="-0.01575 0.00010 -0.00809" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="7.0666e-08 1.54849e-07 1.60394e-07" />
+                                    <geom name="R_rf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="R_rf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l1_visual.obj" class="visual" />
+                                    <body name="R_rf_l2" pos="-0.03364 0 -0.01258" quat="0.9999999986375 -1.4999999980687502e-05 -7.499999996593751e-10 4.999999997354167e-05">
+                                      <joint name="R_rf_j2" type="hinge" range="-1.1156 0.3599" axis="0 1 0" />
+                                      <inertial pos="-0.01273 0.00009 -0.01968" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="4.172e-07 5.7406e-07 2.32592e-07" />
+                                      <geom name="R_rf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="R_rf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l2_visual_0.obj" class="visual" />
+                                      <geom name="R_rf_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l2_visual_1.obj" class="visual" />
+                                      <body name="R_rf_tip" pos="-0.0272 0 -0.0420" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                  <body name="R_lf_l1" pos="-0.10947 0.02964 -0.00019" quat="0.9972975934166506 -0.04382342613518636 -0.0025903000077536265 -0.05890931872803518">
+                                    <joint name="R_lf_j1" type="hinge" range="-1.0118 0.2811" axis="0 1 0" />
+                                    <inertial pos="-0.01409 -0.00010 -0.00740" quat="1.0 0.0 0.0 0.0" mass="0.00137" diaginertia="6.23133e-08 1.12814e-07 1.20863e-07" />
+                                    <geom name="R_lf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l1.obj" rgba="0 0 0 0" />
+                                    <geom name="R_lf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l1_visual.obj" class="visual" />
+                                    <body name="R_lf_l2" pos="-0.02974 -0.00005 -0.01163" quat="0.99999999995 -9.999999999833334e-06 0.0 0.0">
+                                      <joint name="R_lf_j2" type="hinge" range="-1.1073 0.4014" axis="0 1 0" />
+                                      <inertial pos="-0.00835 0.00012 -0.01408" quat="1.0 0.0 0.0 0.0" mass="0.00263" diaginertia="1.24022e-07 1.53209e-07 7.25262e-08" />
+                                      <geom name="R_lf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l2.obj" rgba="0 0 0 0" />
+                                      <geom name="R_lf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l2_visual_0.obj" class="visual" />
+                                      <geom name="R_lf_l2_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l2_visual_1.obj" class="visual" />
+                                      <body name="R_lf_tip" pos="-0.0182 0 -0.0306" quat="1.0 0.0 0.0 0.0" />
+                                    </body>
+                                  </body>
+                                </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="lidar" pos="0.2975 0 0.144" quat="1.0 0.0 0.0 0.0">
+        <inertial pos="-0.00548 3.47734E-05 -0.00608" quat="1.0 0.0 0.0 0.0" mass="0.00423" diaginertia="1.38704e-07 1.36178e-07 1.6409e-07" />
+        <geom name="lidar_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="lidar_material_0" type="mesh" mesh="lidar" class="visual" />
+      </body>
+      <body name="imu" pos="0.165 0 0.2071" quat="1.0 0.0 0.0 0.0">
+        <inertial pos="6.06827E-05 -5.84386E-18 -0.00788" quat="1.0 0.0 0.0 0.0" mass="0.01779" diaginertia="2.22862e-06 1.97585e-06 3.49443e-06" />
+        <geom name="imu_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="imu_material_0" type="mesh" mesh="imu" class="visual" />
+      </body>
+      <body name="L_base_cam" pos="0.02 0.2673 0.208" quat="0.7071054825112363 0.0 0.0 0.7071080798594735">
+        <inertial pos="-0.00857 -2.77556E-17 -0.001" quat="1.0 0.0 0.0 0.0" mass="0.00309" diaginertia="1.66577e-07 9.21398e-08 1.22898e-07" />
+        <geom name="L_base_cam_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_cam_material_0" type="mesh" mesh="base_cam" class="visual" />
+      </body>
+      <body name="R_base_cam" pos="0.02 -0.2673 0.208" quat="0.7071054825112363 0.0 0.0 -0.7071080798594735">
+        <inertial pos="-0.00857 2.77556E-17 -0.001" quat="1.0 0.0 0.0 0.0" mass="0.00309" diaginertia="1.66577e-07 9.21398e-08 1.22898e-07" />
+        <geom name="R_base_cam_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_cam_material_0" type="mesh" mesh="base_cam" class="visual" />
+      </body>
+      <body name="F_base_cam" pos="0.3373 0 0.208" quat="1.0 0.0 0.0 0.0">
+        <inertial pos="-0.00857 1.01381E-17 -0.001" quat="1.0 0.0 0.0 0.0" mass="0.00309" diaginertia="1.66577e-07 9.21398e-08 1.22898e-07" />
+        <geom name="F_base_cam_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_cam_material_0" type="mesh" mesh="base_cam" class="visual" />
+      </body>
+      <body name="B_base_cam" pos="-0.3303 0 0.176" quat="-3.673205103346574e-06 -0.0 0.0 0.9999999999932537">
+        <inertial pos="-0.00857 -1.99967E-19 -0.001" quat="1.0 0.0 0.0 0.0" mass="0.00309" diaginertia="1.66577e-07 9.21398e-08 1.22898e-07" />
+        <geom name="B_base_cam_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="base_cam_material_0" type="mesh" mesh="base_cam" class="visual" />
+      </body>
+      <body name="LF_ultrasonic" pos="0.31642 0.14755 0.15853" quat="0.9545337964838074 0.053329368047252586 -0.2011242351257134 0.21347189960036123">
+        <inertial pos="-0.00984 -0.00459 -0.00495" quat="1.0 0.0 0.0 0.0" mass="0.01186" diaginertia="1.13153e-06 8.4259e-07 1.31676e-06" />
+        <geom name="LF_ultrasonic_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="ultrasonic_material_0" type="mesh" mesh="ultrasonic" class="visual" />
+      </body>
+      <body name="RF_ultrasonic" pos="0.31642 -0.14755 0.15853" quat="0.9553190214527749 -0.0366654793589628 -0.20481851008783372 -0.2099299592704431">
+        <inertial pos="-0.00984 0.00459 -0.00495" quat="1.0 0.0 0.0 0.0" mass="0.01186" diaginertia="1.13153e-06 8.4259e-07 1.31676e-06" />
+        <geom name="RF_ultrasonic_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="ultrasonic_material_0" type="mesh" mesh="ultrasonic" class="visual" />
+      </body>
+      <body name="LB_ultrasonic" pos="-0.31633 0.14751 0.07886" quat="0.21087331016824004 0.21962187177090825 -0.0486844277109243 0.9512773028917445">
+        <inertial pos="-0.01193 0 -0.00011" quat="1.0 0.0 0.0 0.0" mass="0.01186" diaginertia="1.15728e-06 7.86731e-07 1.34687e-06" />
+        <geom name="LB_ultrasonic_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="ultrasonic_material_0" type="mesh" mesh="ultrasonic" class="visual" />
+      </body>
+      <body name="RB_ultrasonic" pos="-0.31633 -0.14751 0.07886" quat="0.21089233567212184 -0.21962089803842974 -0.048688820138622524 -0.951273085235286">
+        <inertial pos="-0.01193 0 -0.00011" quat="1.0 0.0 0.0 0.0" mass="0.01186" diaginertia="1.15728e-06 7.86731e-07 1.34687e-06" />
+        <geom name="RB_ultrasonic_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="ultrasonic_material_0" type="mesh" mesh="ultrasonic" class="visual" />
+      </body>
+      <site name="base_site" pos="0 0 0" quat="1 0 0 0" />
+      <camera name="front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5" />
+      <camera name="side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5" />
+    </body>
+  </worldbody>
+  <actuator>
+    <!-- <motor name="B_wheel_j1_ctrl" joint="B_wheel_j1" class="motor" />
+    <motor name="B_wheel_j2_ctrl" joint="B_wheel_j2" class="motor" />
+    <motor name="R_wheel_j1_ctrl" joint="R_wheel_j1" class="motor" />
+    <motor name="R_wheel_j2_ctrl" joint="R_wheel_j2" class="motor" />
+    <motor name="L_wheel_j1_ctrl" joint="L_wheel_j1" class="motor" />
+    <motor name="L_wheel_j2_ctrl" joint="L_wheel_j2" class="motor" /> -->
+    <position name="torso_j1_ctrl" joint="torso_j1" kp="4500" kv="450" ctrlrange="0 1.570" ctrllimited="true" />
+    <position name="torso_j2_ctrl" joint="torso_j2" kp="4500" kv="450" ctrlrange="0 3.141" ctrllimited="true" />
+    <position name="torso_j3_ctrl" joint="torso_j3" kp="4500" kv="450" ctrlrange="-1.570 1.570" ctrllimited="true" />
+    <!-- <motor name="head_j1_ctrl" joint="head_j1" class="motor" />
+    <motor name="head_j2_ctrl" joint="head_j2" class="motor" />
+    <motor name="head_j3_ctrl" joint="head_j3" class="motor" /> -->
+    <position name="L_arm_j1_ctrl" joint="L_arm_j1" kp="4500" kv="450" ctrlrange="-3.071 3.071" ctrllimited="true" />
+    <position name="L_arm_j2_ctrl" joint="L_arm_j2" kp="4500" kv="450" ctrlrange="-0.453 1.553" ctrllimited="true" />
+    <position name="L_arm_j3_ctrl" joint="L_arm_j3" kp="4500" kv="450" ctrlrange="-3.071 3.071" ctrllimited="true" />
+    <position name="L_arm_j4_ctrl" joint="L_arm_j4" kp="4500" kv="450" ctrlrange="-3.071 0.244" ctrllimited="true" />
+    <position name="L_arm_j5_ctrl" joint="L_arm_j5" kp="4500" kv="450" ctrlrange="-3.071 3.071" ctrllimited="true" />
+    <position name="L_arm_j6_ctrl" joint="L_arm_j6" kp="4500" kv="450" ctrlrange="-1.396 1.396" ctrllimited="true" />
+    <position name="L_arm_j7_ctrl" joint="L_arm_j7" kp="4500" kv="450" ctrlrange="-1.378 1.117" ctrllimited="true" />
+    <position name="R_arm_j1_ctrl" joint="R_arm_j1" kp="4500" kv="450" ctrlrange="-3.071 3.071" ctrllimited="true" />
+    <position name="R_arm_j2_ctrl" joint="R_arm_j2" kp="4500" kv="450" ctrlrange="-1.553 0.453" ctrllimited="true" />
+    <position name="R_arm_j3_ctrl" joint="R_arm_j3" kp="4500" kv="450" ctrlrange="-3.071 3.071" ctrllimited="true" />
+    <position name="R_arm_j4_ctrl" joint="R_arm_j4" kp="4500" kv="450" ctrlrange="-3.071 0.244" ctrllimited="true" />
+    <position name="R_arm_j5_ctrl" joint="R_arm_j5" kp="4500" kv="450" ctrlrange="-3.071 3.071" ctrllimited="true" />
+    <position name="R_arm_j6_ctrl" joint="R_arm_j6" kp="4500" kv="450" ctrlrange="-1.396 1.396" ctrllimited="true" />
+    <position name="R_arm_j7_ctrl" joint="R_arm_j7" kp="4500" kv="450" ctrlrange="-1.117 1.378" ctrllimited="true" />
+    <!-- <position name="L_th_j0_ctrl" joint="L_th_j0" kp="10" kv="1" forcerange="-1.00000000 1.00000000" forcelimited="true" ctrlrange="-0.0158 1.605" ctrllimited="true" />
+    <position name="L_th_j1_ctrl" joint="L_th_j1" kp="10" kv="1" forcerange="-1.00000000 1.00000000" forcelimited="true" ctrlrange="-0.3468 0.1834" ctrllimited="true" />
+    <position name="L_th_j2_ctrl" joint="L_th_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-0.4298 0.2731" ctrllimited="true" />
+    <position name="L_ff_j1_ctrl" joint="L_ff_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0946 0.2891" ctrllimited="true" />
+    <position name="L_ff_j2_ctrl" joint="L_ff_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.2101 0.3681" ctrllimited="true" />
+    <position name="L_mf_j1_ctrl" joint="L_mf_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0844 0.2801" ctrllimited="true" />
+    <position name="L_mf_j2_ctrl" joint="L_mf_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.2026 0.3533" ctrllimited="true" />
+    <position name="L_rf_j1_ctrl" joint="L_rf_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0154 0.284" ctrllimited="true" />
+    <position name="L_rf_j2_ctrl" joint="L_rf_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.1156 0.3599" ctrllimited="true" />
+    <position name="L_lf_j1_ctrl" joint="L_lf_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0118 0.2811" ctrllimited="true" />
+    <position name="L_lf_j2_ctrl" joint="L_lf_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.1073 0.4014" ctrllimited="true" />
+    <position name="R_th_j0_ctrl" joint="R_th_j0" kp="10" kv="1" forcerange="-1.00000000 1.00000000" forcelimited="true" ctrlrange="-0.0158 1.605" ctrllimited="true" />
+    <position name="R_th_j1_ctrl" joint="R_th_j1" kp="10" kv="1" forcerange="-1.00000000 1.00000000" forcelimited="true" ctrlrange="-0.3468 0.1834" ctrllimited="true" />
+    <position name="R_th_j2_ctrl" joint="R_th_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-0.4298 0.2731" ctrllimited="true" />
+    <position name="R_ff_j1_ctrl" joint="R_ff_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0946 0.2891" ctrllimited="true" />
+    <position name="R_ff_j2_ctrl" joint="R_ff_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.2101 0.3681" ctrllimited="true" />
+    <position name="R_mf_j1_ctrl" joint="R_mf_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0844 0.2801" ctrllimited="true" />
+    <position name="R_mf_j2_ctrl" joint="R_mf_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.2026 0.3533" ctrllimited="true" />
+    <position name="R_rf_j1_ctrl" joint="R_rf_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0154 0.284" ctrllimited="true" />
+    <position name="R_rf_j2_ctrl" joint="R_rf_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.1156 0.3599" ctrllimited="true" />
+    <position name="R_lf_j1_ctrl" joint="R_lf_j1" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.0118 0.2811" ctrllimited="true" />
+    <position name="R_lf_j2_ctrl" joint="R_lf_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-1.1073 0.4014" ctrllimited="true" /> -->
+  </actuator>
+  <!-- <contact>
+    <exclude body1="base" body2="torso_l1" />
+    <exclude body1="torso_l1" body2="torso_l2" />
+    <exclude body1="torso_l2" body2="torso_l3" />
+    <exclude body1="head_l1" body2="head_l2" />
+    <exclude body1="head_l2" body2="head_l3" />
+    <exclude body1="L_arm_l1" body2="L_arm_l2" />
+    <exclude body1="L_arm_l2" body2="L_arm_l3" />
+    <exclude body1="L_arm_l3" body2="L_arm_l4" />
+    <exclude body1="L_arm_l4" body2="L_arm_l5" />
+    <exclude body1="L_arm_l5" body2="L_arm_l6" />
+    <exclude body1="L_arm_l6" body2="L_arm_l7" />
+    <exclude body1="L_arm_l7" body2="L_arm_l8" />
+    <exclude body1="R_arm_l1" body2="R_arm_l2" />
+    <exclude body1="R_arm_l2" body2="R_arm_l3" />
+    <exclude body1="R_arm_l3" body2="R_arm_l4" />
+    <exclude body1="R_arm_l4" body2="R_arm_l5" />
+    <exclude body1="R_arm_l5" body2="R_arm_l6" />
+    <exclude body1="R_arm_l6" body2="R_arm_l7" />
+    <exclude body1="R_arm_l7" body2="R_arm_l8" />
+  </contact> -->
+  <sensor>
+    <framepos name="base_site_pos" objtype="site" objname="base_site" />
+    <framequat name="base_site_quat" objtype="site" objname="base_site" />
+    <framelinvel name="base_site_linvel" objtype="site" objname="base_site" />
+    <frameangvel name="base_site_angvel" objtype="site" objname="base_site" />
+    <velocimeter name="base_site_vel" site="base_site" />
+  </sensor>
+</mujoco>

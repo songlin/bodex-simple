@@ -1,0 +1,46 @@
+<mujoco model="torso_l2">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.89803922 0.91764706 0.92941176 1.0"/>
+    <material name="material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0"/>
+    <material name="material_2" specular="0.4000000000000001" shininess="0.001" rgba="0.50196078 0.50196078 0.50196078 1.0"/>
+    <material name="material_3" specular="0.4000000000000001" shininess="0.001" rgba="0.70588235 0.70588235 0.70588235 1.0"/>
+    <material name="material_4" specular="0.4000000000000001" shininess="0.001" rgba="0.25098039 0.25098039 0.25098039 1.0"/>
+    <material name="material_5" specular="0.4000000000000001" shininess="0.001" rgba="0.29803922 0.29803922 0.29803922 1.0"/>
+    <material name="material_6" specular="0.4000000000000001" shininess="0.001" rgba="0.89019608 0.89019608 0.91372549 1.0"/>
+    <material name="material_7" specular="0.4000000000000001" shininess="0.001" rgba="0.64705882 0.61960784 0.58823529 1.0"/>
+    <material name="material_8" specular="0.4000000000000001" shininess="0.001" rgba="0.69019608 0.69019608 0.69019608 1.0"/>
+    <material name="material_9" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0"/>
+    <mesh file="torso_l2_0.obj"/>
+    <mesh file="torso_l2_1.obj"/>
+    <mesh file="torso_l2_2.obj"/>
+    <mesh file="torso_l2_3.obj"/>
+    <mesh file="torso_l2_4.obj"/>
+    <mesh file="torso_l2_5.obj"/>
+    <mesh file="torso_l2_6.obj"/>
+    <mesh file="torso_l2_7.obj"/>
+    <mesh file="torso_l2_8.obj"/>
+    <mesh file="torso_l2_9.obj"/>
+  </asset>
+  <worldbody>
+    <body name="torso_l2">
+      <geom mesh="torso_l2_0" material="material_9" class="visual"/>
+      <geom mesh="torso_l2_1" material="material_8" class="visual"/>
+      <geom mesh="torso_l2_2" material="material_7" class="visual"/>
+      <geom mesh="torso_l2_3" material="material_6" class="visual"/>
+      <geom mesh="torso_l2_4" material="material_5" class="visual"/>
+      <geom mesh="torso_l2_5" material="material_4" class="visual"/>
+      <geom mesh="torso_l2_6" material="material_3" class="visual"/>
+      <geom mesh="torso_l2_7" material="material_2" class="visual"/>
+      <geom mesh="torso_l2_8" material="material_1" class="visual"/>
+      <geom mesh="torso_l2_9" material="material_0" class="visual"/>
+    </body>
+  </worldbody>
+</mujoco>

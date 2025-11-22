@@ -1,0 +1,69 @@
+robot: 'vega_1'
+collision_spheres: 
+  base:
+    - center: [0, 0, 0]
+      radius: 0.05
+  torso_l1:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  torso_l2:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  torso_l3:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l1:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l2:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l3:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l4:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l5:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l6:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l7:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  L_arm_l8:
+    - center: [0, 0, 0.15]
+      radius: 0.05
+  L_ee:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l1:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l2:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l3:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l4:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l5:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l6:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l7:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_arm_l8:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  R_ee:
+    - center: [0, 0, 0.0]
+      radius: 0.05
+  

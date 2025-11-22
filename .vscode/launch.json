@@ -9,7 +9,8 @@
             "program": "${workspaceFolder}/example_grasp/plan_mogen_batch.py",
             "console": "integratedTerminal",
             "args": [
-                "--manip_cfg_file=sim_inspire/left.yml",
+                "--manip_cfg_file=sim_vega1/right.yml",
+                // "--manip_cfg_file=sim_inspire/left.yml",
                 // "--parallel_world=1",
                 "--skip",
                 // "--save_id=0"
@@ -23,7 +24,8 @@
             "program": "${workspaceFolder}/example_grasp/plan_batch_env.py",
             "console": "integratedTerminal",
             "args": [
-                "--manip_cfg_file=sim_inspire/left.yml",
+                // "--manip_cfg_file=sim_inspire/left.yml",
+                "--manip_cfg_file=sim_vega1/right.yml",
                 "--parallel_world=1",
                 "--skip",
                 "--save_id=0",
@@ -40,8 +42,11 @@
                 // "--manip_cfg_file=sim_dex3/right.yml",
                 // "--path=dex3_debug",
                 // "--mode=grasp",
-                "--manip_cfg_file=sim_inspire/left.yml",
-                "--path=inspire_debug",
+                // "--manip_cfg_file=sim_inspire/left.yml",
+                // "--path=inspire_debug",
+                // "--mode=mogen",
+                "--manip_cfg_file=sim_vega1/right.yml",
+                "--path=dexmate_debug",
                 "--mode=mogen",
                 "--skip",
                 // "--save_mode=npy",

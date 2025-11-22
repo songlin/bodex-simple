@@ -183,8 +183,8 @@ examples/debug/*.onnx
 *.profile
 *.cache
 *.flatbuffers
-#*.obj
-*.glb
+# *.obj
+# *.glb
 *.onnx
 *stltoobj.bat
 external/*
@@ -202,7 +202,7 @@ nvidia_curobo*/
 *.usda
 *.pdf
 #*.png
-*.usd
+# *.usd
 *.SLDPRT
 
 *tfevents*

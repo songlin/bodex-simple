@@ -1,0 +1,495 @@
+robot_cfg:
+  kinematics:
+    use_usd_kinematics: false
+    urdf_path: robot/vega_1/vega.urdf
+    asset_root_path: robot/vega_1
+    isaac_usd_path: null
+    usd_robot_root: vega_1
+    usd_path: null
+    base_link: "base"
+    ee_link: "R_hand_base" 
+    link_names: [
+      "R_hand_base",
+      "R_th_l2",
+      "R_ff_l2",
+      "R_mf_l2",
+      "R_rf_l2",
+      "R_lf_l2",
+    ]
+
+    # lock_joints:
+    #   B_wheel_j1: 0.0
+    #   B_wheel_j2: 0.0
+    #   L_wheel_j1: 0.0
+    #   L_wheel_j2: 0.0
+    #   R_wheel_j1: 0.0
+    #   R_wheel_j2: 0.0
+
+    extra_links: null
+
+    collision_link_names: [
+      # Torso
+      "torso_l1",
+      "torso_l2",
+      "torso_l3",
+      
+      # Left arm
+      "L_arm_l1",
+      "L_arm_l2",
+      "L_arm_l3",
+      "L_arm_l4",
+      "L_arm_l5",
+      "L_arm_l6",
+      "L_arm_l7",
+      
+      # Right arm
+      "R_arm_l1",
+      "R_arm_l2",
+      "R_arm_l3",
+      "R_arm_l4",
+      "R_arm_l5",
+      "R_arm_l6",
+      "R_arm_l7",
+      
+      # Right hand
+      "R_hand_base",
+      "R_th_l0",
+      "R_th_l1",
+      "R_th_l2",
+      "R_ff_l1",
+      "R_ff_l2",
+      "R_mf_l1",
+      "R_mf_l2",
+      "R_rf_l1",
+      "R_rf_l2",
+      "R_lf_l1",
+      "R_lf_l2",
+    ]
+    collision_spheres: spheres/vega1_dexmate.yml
+    collision_sphere_buffer: 0.005
+    extra_collision_spheres: {}
+    
+    self_collision_ignore: {
+      "torso_l1": [
+        "torso_l1",
+        "torso_l2",
+        "L_arm_l1",
+        "R_arm_l1",
+      ],
+      "torso_l2": [
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        "L_arm_l1",
+        "R_arm_l1",
+      ],
+      "torso_l3": [
+        "torso_l2",
+        "torso_l3",
+        "L_arm_l1",
+        "R_arm_l1",
+      ],
+      
+      # Left arm self-collision ignore
+      "L_arm_l1": [
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+      ],
+      "L_arm_l2": [
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+      ],
+      "L_arm_l3": [
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+      ],
+      "L_arm_l4": [
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+      ],
+      "L_arm_l5": [
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+      ],
+      "L_arm_l6": [
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+      ],
+      "L_arm_l7": [
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+      ],
+      
+      # Right arm self-collision ignore
+      "R_arm_l1": [
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+      ],
+      "R_arm_l2": [
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+      ],
+      "R_arm_l3": [
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+      ],
+      "R_arm_l4": [
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+      ],
+      "R_arm_l5": [
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
+      ],
+      "R_arm_l6": [
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
+      ],
+      "R_arm_l7": [
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
+        "R_hand_base",
+      ],
+      
+      # Right hand self-collision ignore
+      "R_hand_base": [
+        "R_hand_base",
+        "R_th_l0",
+        "R_th_l1",
+        "R_th_l2",
+        "R_ff_l1",
+        "R_ff_l2",
+        "R_mf_l1",
+        "R_mf_l2",
+        "R_rf_l1",
+        "R_rf_l2",
+        "R_lf_l1",
+        "R_lf_l2",
+        "R_arm_l7",
+      ],
+      "R_th_l0": [
+        "R_hand_base",
+        "R_th_l0",
+        "R_th_l1",
+        "R_th_l2",
+      ],
+      "R_th_l1": [
+        "R_hand_base",
+        "R_th_l0",
+        "R_th_l1",
+        "R_th_l2",
+      ],
+      "R_th_l2": [
+        "R_hand_base",
+        "R_th_l0",
+        "R_th_l1",
+        "R_th_l2",
+      ],
+      "R_ff_l1": [
+        "R_hand_base",
+        "R_ff_l1",
+        "R_ff_l2",
+        "R_mf_l1",
+      ],
+      "R_ff_l2": [
+        "R_hand_base",
+        "R_ff_l1",
+        "R_ff_l2",
+        "R_mf_l1",
+        "R_mf_l2",
+      ],
+      "R_mf_l1": [
+        "R_hand_base",
+        "R_ff_l1",
+        "R_mf_l1",
+        "R_mf_l2",
+        "R_rf_l1",
+      ],
+      "R_mf_l2": [
+        "R_hand_base",
+        "R_ff_l2",
+        "R_mf_l1",
+        "R_mf_l2",
+        "R_rf_l1",
+        "R_rf_l2",
+      ],
+      "R_rf_l1": [
+        "R_hand_base",
+        "R_mf_l1",
+        "R_rf_l1",
+        "R_rf_l2",
+        "R_lf_l1",
+      ],
+      "R_rf_l2": [
+        "R_hand_base",
+        "R_mf_l2",
+        "R_rf_l1",
+        "R_rf_l2",
+        "R_lf_l1",
+        "R_lf_l2",
+      ],
+      "R_lf_l1": [
+        "R_hand_base",
+        "R_rf_l1",
+        "R_lf_l1",
+        "R_lf_l2",
+      ],
+      "R_lf_l2": [
+        "R_hand_base",
+        "R_rf_l2",
+        "R_lf_l1",
+        "R_lf_l2",
+      ],
+    } # Dict[str, List[str]]
+    
+    self_collision_buffer: {
+      "torso_l1": 0.0,
+      "torso_l2": 0.0,
+      "torso_l3": 0.0,
+      
+      "L_arm_l1": 0.0,
+      "L_arm_l2": 0.0,
+      "L_arm_l3": 0.0,
+      "L_arm_l4": 0.0,
+      "L_arm_l5": 0.0,
+      "L_arm_l6": 0.0,
+      "L_arm_l7": 0.0,
+      
+      "R_arm_l1": 0.0,
+      "R_arm_l2": 0.0,
+      "R_arm_l3": 0.0,
+      "R_arm_l4": 0.0,
+      "R_arm_l5": 0.0,
+      "R_arm_l6": 0.0,
+      "R_arm_l7": 0.0,
+      
+      "R_hand_base": 0.0,
+      "R_th_l0": 0.0,
+      "R_th_l1": 0.0,
+      "R_th_l2": 0.0,
+      "R_ff_l1": 0.0,
+      "R_ff_l2": 0.0,
+      "R_mf_l1": 0.0,
+      "R_mf_l2": 0.0,
+      "R_rf_l1": 0.0,
+      "R_rf_l2": 0.0,
+      "R_lf_l1": 0.0,
+      "R_lf_l2": 0.0,
+    } # Dict[str, float]
+
+    use_global_cumul: True
+    mesh_link_names: [
+      # Base
+      "base",
+      
+      # Wheels
+      "L_wheel_l1",
+      "L_wheel_l2",
+      "R_wheel_l1",
+      "R_wheel_l2",
+      "B_wheel_l1",
+      "B_wheel_l2",
+      
+      # Torso
+      "torso_l1",
+      "torso_l2",
+      "torso_l3",
+      
+      # Head
+      "head_l1",
+      "head_l2",
+      "head_l3",
+      
+      # Left arm
+      "L_arm_l1",
+      "L_arm_l2",
+      "L_arm_l3",
+      "L_arm_l4",
+      "L_arm_l5",
+      "L_arm_l6",
+      "L_arm_l7",
+      "L_arm_l8",
+
+      # Left hand
+      "L_hand_base",
+      "L_th_l0",
+      "L_th_l1",
+      "L_th_l2",
+      "L_ff_l1",
+      "L_ff_l2",
+      "L_mf_l1",
+      "L_mf_l2",
+      "L_rf_l1",
+      "L_rf_l2",
+      "L_lf_l1",
+      "L_lf_l2",
+      
+      # Right arm
+      "R_arm_l1",
+      "R_arm_l2",
+      "R_arm_l3",
+      "R_arm_l4",
+      "R_arm_l5",
+      "R_arm_l6",
+      "R_arm_l7",
+      "R_arm_l8",
+      
+      # Right hand
+      "R_hand_base",
+      "R_th_l0",
+      "R_th_l1",
+      "R_th_l2",
+      "R_ff_l1",
+      "R_ff_l2",
+      "R_mf_l1",
+      "R_mf_l2",
+      "R_rf_l1",
+      "R_rf_l2",
+      "R_lf_l1",
+      "R_lf_l2",
+    ] # List[str]
+
+    cspace:
+      joint_names: [
+        # Wheels (6 joints)
+        "L_wheel_j1",
+        "R_wheel_j1",
+        "B_wheel_j1",
+        "L_wheel_j2", 
+        "B_wheel_j2", 
+        "R_wheel_j2",
+        
+        # Torso (3 joints)
+        "torso_j1",
+        "torso_j2",
+        "torso_j3",
+        
+        # Head (3 joints)
+        "head_j1",
+        "head_j2",
+        "head_j3",
+        
+        # Left arm (7 joints)
+        "L_arm_j1",
+        "L_arm_j2",
+        "L_arm_j3",
+        "L_arm_j4",
+        "L_arm_j5",
+        "L_arm_j6",
+        "L_arm_j7",
+
+        # Left hand (6 independent joints - mimic joints excluded)
+        "L_th_j0",
+        "L_th_j1",
+        "L_ff_j1",
+        "L_mf_j1",
+        "L_rf_j1",
+        "L_lf_j1",
+        
+        # Right arm (7 joints)
+        "R_arm_j1",
+        "R_arm_j2",
+        "R_arm_j3",
+        "R_arm_j4",
+        "R_arm_j5",
+        "R_arm_j6",
+        "R_arm_j7",
+        
+        # Right hand (6 independent joints - mimic joints excluded)
+        "R_th_j0",
+        "R_th_j1",
+        "R_ff_j1",
+        "R_mf_j1",
+        "R_rf_j1",
+        "R_lf_j1",
+      ] # List[str]
+
+      retract_config: [
+        # Wheels (6)
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        # Torso (3)
+        0.0, 0.0, 0.0,
+        # Head (3)
+        0.0, 0.0, 0.0,
+        # Left arm (7)
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        # Left hand (6)
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        # Right arm (7)
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        # Right hand (6)
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      ] # List[float]
+      
+      null_space_weight: [
+        # Wheels (6)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Torso (3)
+        1.0, 1.0, 1.0,
+        # Head (3)
+        1.0, 1.0, 1.0,
+        # Left arm (7)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Left hand (6)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Right arm (7)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Right hand (6)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+      ] # List[float]
+      
+      cspace_distance_weight: [
+        # Wheels (6)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Torso (3)
+        1.0, 1.0, 1.0,
+        # Head (3)
+        1.0, 1.0, 1.0,
+        # Left arm (7)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Left hand (6)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Right arm (7)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        # Right hand (6)
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+      ] # List[float]
+      
+      max_jerk: 500.0
+      max_acceleration: 15.0

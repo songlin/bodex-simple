@@ -90,7 +90,6 @@ robot_cfg:
                 "left_shoulder_yaw_link",
                 "left_elbow_link",
                 "left_wrist_pitch_link",
-                
             ],
             "left_elbow_link": [
                 "left_shoulder_pitch_link",
@@ -192,7 +191,8 @@ robot_cfg:
                 "L_ring_intermediate",
                 "L_pinky_intermediate",
             ],
-            "L_index_proximal": ["L_hand_base_link",
+            "L_index_proximal": [
+                "L_hand_base_link",
                 "L_thumb_distal",
                 "L_index_intermediate",
                 "L_middle_intermediate",

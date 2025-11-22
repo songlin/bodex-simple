@@ -1,0 +1,19 @@
+<mujoco model="L_arm_l6">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0"/>
+    <mesh file="L_arm_l6.obj"/>
+  </asset>
+  <worldbody>
+    <body name="L_arm_l6">
+      <geom material="material_0" mesh="L_arm_l6" class="visual"/>
+    </body>
+  </worldbody>
+</mujoco>

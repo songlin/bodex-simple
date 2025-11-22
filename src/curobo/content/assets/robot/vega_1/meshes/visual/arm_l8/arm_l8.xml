@@ -1,0 +1,22 @@
+<mujoco model="arm_l8">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.75294118 0.75294118 0.75294118 1.0"/>
+    <material name="material_1" specular="0.4000000000000001" shininess="0.001" rgba="0.40000000 0.40000000 0.40000000 1.0"/>
+    <mesh file="arm_l8_1.obj"/>
+    <mesh file="arm_l8_2.obj"/>
+  </asset>
+  <worldbody>
+    <body name="arm_l8">
+      <geom mesh="arm_l8_1" material="material_1" class="visual"/>
+      <geom mesh="arm_l8_2" material="material_0" class="visual"/>
+    </body>
+  </worldbody>
+</mujoco>

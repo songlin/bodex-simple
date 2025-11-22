@@ -242,7 +242,7 @@ if __name__ == "__main__":
             squeeze_pose_qpos = torch.cat(
                 [
                     grasp_result.solution[..., 1, :7],
-                    grasp_result.solution[..., 1, 7:] * 2 - grasp_result.solution[..., 0, 7:],
+                    grasp_result.solution[..., 1, 7:] * 3 - 2 * grasp_result.solution[..., 0, 7:],
                 ],
                 dim=-1,
             )
@@ -385,10 +385,10 @@ if __name__ == "__main__":
             from pathlib import Path
 
             # old_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
-            old_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_inspire/left/inspire_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
+            old_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_vega1/right/dexmate_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
 
             # new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata",f"apple_mogen{i}.npy"))
-            new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_inspire/left/inspire_debug/graspdata",f"apple_mogen{i}.npy"))
+            new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_vega1/right/dexmate_debug/graspdata",f"apple_mogen{i}.npy"))
 
             torch.save(pregrasp_pose_qpos[i], str(new_file).replace(".npy","_pregrasp.pt"))
             torch.save(grasp_pose_qpos[i], str(new_file).replace(".npy",".pt"))

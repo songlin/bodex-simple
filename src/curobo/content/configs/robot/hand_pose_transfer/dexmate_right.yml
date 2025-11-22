@@ -1,0 +1,9 @@
+# Dexmate Right Hand Pose Transfer
+# Hand coordinate frame:
+#   X: along fingers in reverse direction (pointing backwards, negative X points to finger tips) 
+#   Y: towards negative thumbside
+#   Z: negative palm normal (negative X points out of palm)
+
+R_hand_base:
+  r: [[0.0, 0.0, -1.0], [0.0, -1.0, 0.0], [-1.0, 0.0, 0.0]]
+  t: [0.0, 0.0, 0.0]  # No translation offset needed

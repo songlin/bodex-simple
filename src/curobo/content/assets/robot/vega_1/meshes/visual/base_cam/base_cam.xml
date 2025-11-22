@@ -1,0 +1,19 @@
+<mujoco model="base_cam">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0" specular="0.4000000000000001" shininess="0.001" rgba="0.00000000 0.00000000 0.00000000 1.0"/>
+    <mesh file="base_cam.obj"/>
+  </asset>
+  <worldbody>
+    <body name="base_cam">
+      <geom material="material_0" mesh="base_cam" class="visual"/>
+    </body>
+  </worldbody>
+</mujoco>

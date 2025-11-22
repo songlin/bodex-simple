@@ -1,0 +1,20 @@
+<mujoco model="connector">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="Silver" specular="0.4000000000000001" shininess="0.001" rgba="0.89019608 0.89019608 0.89019608 1.0"/>
+    <mesh file="connector.obj"/>
+  </asset>
+  <worldbody>
+    <body name="connector">
+      <geom material="Silver" mesh="connector" class="visual"/>
+      <geom mesh="connector" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

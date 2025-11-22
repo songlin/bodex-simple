@@ -16,7 +16,15 @@ elif [ "$1" = "dex3" ]; then
         --task grasp_and_mogen \
         --skip
 
+elif [ "$1" = "dexmate" ]; then
+    rm src/curobo/content/assets/output/sim_dexmate/right/dexmate_debug/graspdata/apple_*
+
+    CUDA_VISIBLE_DEVICES=5 python example_grasp/plan_mogen_batch.py \
+        --manip_cfg_file sim_dexmate/right.yml \
+        --task grasp_and_mogen \
+        --skip
+
 else
-    echo "Usage: $0 {inspire|dex3}"
+    echo "Usage: $0 {inspire|dex3|dexmate}"
     exit 1
 fi

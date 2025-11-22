@@ -28,10 +28,6 @@ collision_spheres:
   - "center": [0.001, -0.10, -0.017]
     "radius": 0.015
 
-  # Thumb: X axis along fingers, positive points towards wrist
-  #        Y axis along thumb, positive points away from thumb
-  #        Z axis along palm, positive points out of the palm
-
   L_thumb_proximal_base:
   - "center": [-0.001, 0.0, 0.0]
     "radius": 0.005

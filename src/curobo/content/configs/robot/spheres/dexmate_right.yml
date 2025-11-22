@@ -1,0 +1,110 @@
+collision_link_names:
+  - R_hand_base
+  - R_th_l0
+  - R_th_l1
+  - R_th_l2
+  - R_ff_l1
+  - R_ff_l2
+  - R_mf_l1
+  - R_mf_l2
+  - R_rf_l1
+  - R_rf_l2
+  - R_lf_l1
+  - R_lf_l2
+
+collision_spheres:
+  # Palm base
+  R_hand_base:
+    - center: [-0.024, -0.001, -0.0022]
+      radius: 0.02
+    - center: [-0.06, -0.003, 0.002]
+      radius: 0.015
+    - center: [-0.09, 0.023, -0.002]
+      radius: 0.010
+    - center: [-0.09, -0.004, -0.002]
+      radius: 0.010
+    - center: [-0.091, -0.028, -0.002]
+      radius: 0.010
+
+  # Thumb - proximal base
+  R_th_l0:
+    - center: [0.007, 0.0, 0.0045]
+      radius: 0.01
+
+  # Thumb - link 1
+  R_th_l1:
+    - center: [0.035, -0.014, 0.0001]
+      radius: 0.01
+    - center: [0.0175, -0.005, 0.0001]
+      radius: 0.01
+    - center: [0.0, 0.0, 0.0001]
+      radius: 0.01
+
+  # Thumb - link 2 (distal)
+  R_th_l2:
+    - center: [0.008, -0.008, -0.001]
+      radius: 0.005
+
+  # Index finger - proximal
+  R_ff_l1:
+    - center: [-0.008, 0.0, -0.007]
+      radius: 0.005
+    - center: [-0.02, 0.0, -0.010]
+      radius: 0.005
+
+  # Index finger - intermediate
+  R_ff_l2:
+    - center: [-0.002, 0.0, -0.007]
+      radius: 0.005
+    - center: [-0.013, 0.0, -0.017]
+      radius: 0.005
+    - center: [-0.0217, 0.0001, -0.030]
+      radius: 0.005
+
+  # Middle finger - proximal
+  R_mf_l1:
+    - center: [-0.016, 0.0, -0.009]
+      radius: 0.005
+    - center: [-0.027, 0.0, -0.013]
+      radius: 0.005
+
+  # Middle finger - intermediate
+  R_mf_l2:
+    - center: [-0.004, 0.0, -0.007]
+      radius: 0.005
+    - center: [-0.012, 0.0, -0.015]
+      radius: 0.005
+    - center: [-0.0245, -0.001, -0.033]
+      radius: 0.004
+
+  # Ring finger - proximal
+  R_rf_l1:
+    - center: [-0.025, 0.0, -0.011]
+      radius: 0.005
+    - center: [-0.015, 0.0, -0.010]
+      radius: 0.005
+
+  # Ring finger - intermediate
+  R_rf_l2:
+    - center: [-0.008, 0.0, -0.013]
+      radius: 0.005
+    - center: [-0.017, 0.0, -0.023]
+      radius: 0.005
+    - center: [-0.0205, 0.0, -0.032]
+      radius: 0.005
+
+  # Pinky finger - proximal
+  R_lf_l1:
+    - center: [-0.011, 0.0, -0.008]
+      radius: 0.005
+    - center: [-0.02, 0.0, -0.010]
+      radius: 0.005
+
+  # Pinky finger - intermediate
+  R_lf_l2:
+    - center: [-0.0045, 0.0, -0.007]
+      radius: 0.005
+    - center: [-0.009, 0.0, -0.014]
+      radius: 0.005
+    - center: [-0.013, 0.0, -0.022]
+      radius: 0.004
