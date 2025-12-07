@@ -27,7 +27,7 @@ seeder_cfg:
   # 6 DOF for Vega-1 Right Hand:
   # R_th_j0, R_th_j1, R_ff_j1, R_mf_j1, R_rf_j1, R_lf_j1
   # Note: R_th_j2, R_ff_j2, R_mf_j2, R_rf_j2, R_lf_j2 are mimic joints
-  q: [0.5, 0.0, 0.0, 0.0, 0.0, 0.0]
+  q: [1.5, 0.1834, 0.2891, 0.2801, 0.2840, 0.2811]
   # Jitter for sampling variety
   jitter_angle: [[-180, -15, -15], [180, 15, 15]]
   jitter_dist: [[0.0, -0.03, -0.03], [0.03, 0.03, 0.03]]
@@ -35,6 +35,7 @@ seeder_cfg:
 grasp_contact_strategy:
   # 5 contact points (all fingertips), using intermediate links with sphere index 0
   contact_points_name: 
+    # - R_hand_base/3
     - R_th_l2/0        # Thumb tip
     - R_ff_l2/0        # Index fingertip  
     - R_mf_l2/0        # Middle fingertip
@@ -66,32 +67,31 @@ grasp_cfg:
     pressure_constraints:
       # All 5 fingers together provide full wrench
       - [[0, 1, 2, 3, 4], 1.0]
-      # Four fingers (non-thumb) provide at least 60%
-      - [[1, 2, 3, 4], 0.6]
-      # Thumb provides at least 30%
-      - [[0], 0.30]
-      # Middle+Ring provide at least 25% (strongest adjacent pair)
-      - [[2, 3], 0.25]
-      # Index provides at least 18% (strongest non-thumb finger)
-      - [[1], 0.18]
-      # Pinky provides at least 10% (weakest finger)
-      - [[4], 0.10]
+      # # Four fingers (non-thumb) provide at least 60%
+      # - [[1, 2, 3, 4], 0.6]
+      # # Thumb provides at least 30%
+      # - [[0], 0.30]
+      # # Middle+Ring provide at least 25% (strongest adjacent pair)
+      # - [[2, 3], 0.25]
+      # # Index provides at least 18% (strongest non-thumb finger)
+      # - [[1], 0.18]
+      # # Pinky provides at least 10% (weakest finger)
+      # - [[4], 0.10]
     
     enable_density: False
-    solve_interval: 5
+    solve_interval: 1
 
-# Initial configuration: 6 DOF + 7 base pose (x,y,z,qw,qx,qy,qz) + padding
-# Total matches expected format
 mogen_init: [
-  # 6 joint angles (independent joints only, mimics follow automatically)
-  0.0,    # R_th_j0 (thumb yaw)
-  0.0,    # R_th_j1 (thumb pitch)
-  0.0,    # R_ff_j1 (index)
-  0.0,    # R_mf_j1 (middle)
-  0.0,    # R_rf_j1 (ring)
-  0.0,    # R_lf_j1 (pinky)
-  # 7 base pose values (filled by solver)
+  # Torso
+  0, 0, 0,
+  # Right arm
+  # -1.57, 0, 0, -1.57, 0, 0, 0, 
   0, 0, 0, 0, 0, 0, 0,
-  # Padding to match expected length
-  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  # Right hand (independent joints only, mimics follow automatically)
+  1.5, 0.1834, 0.2891, 0.2801, 0.2840, 0.2811,
+  # Left arm + Left hand (padding)
+  # 1.57, 0, 0, -1.57, 0, 0, 0, 
+  # 1.5, 0.15, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 
+  1.5, 0.1834, 0.2891, 0.2801, 0.2840, 0.2811,
 ]

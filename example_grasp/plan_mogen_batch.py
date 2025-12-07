@@ -168,18 +168,19 @@ if __name__ == "__main__":
             log_warn(f"skip {world_info_dict['save_prefix']}")
             continue
 
-        file_path = os.path.join(os.getcwd(), "coacd_0.05/coacd_merge.obj")
-        urdf_path = os.path.join(os.getcwd(), "coacd_0.05/coacd.urdf")
-        npy_path = os.path.join(os.getcwd(), "coacd_0.05/12_stable.npy")
+        file_path = os.path.join(os.getcwd(), "00_coacd_0.05/coacd_merge.obj")
+        urdf_path = os.path.join(os.getcwd(), "00_coacd_0.05/coacd.urdf")
+        npy_path = os.path.join(os.getcwd(), "00_coacd_0.05/0_stable.npy")
+        obj_name = "apple"
 
-        x_offset = 0.5
-        z_offset = 0.8
+        x_offset = 0.2
+        z_offset = 0.459
 
         data = np.load(npy_path, allow_pickle=True)[0]
         obj_pose = _transform_to_robot_frame(np.array([0.4000000059604645 + x_offset, 0.0, data[2] + z_offset, data[3], data[4], data[5], data[6]]))
         world_cfg = [{
             "mesh": {
-                "apple": {
+                obj_name: {
                     "scale": np.array([1.0, 1.0, 1.0]),
                     "pose": obj_pose,
                     "file_path": file_path,
@@ -212,7 +213,7 @@ if __name__ == "__main__":
 
             grasp_config = GraspSolverConfig.load_from_robot_config(
                 world_model=world_cfg,
-                manip_name_list="apple",
+                manip_name_list=obj_name,
                 manip_config_data=manip_config_data,
                 obj_gravity_center=torch.tensor([[0.0, 0.0, 0.02]]),
                 obj_obb_length=torch.tensor([0.04]),
@@ -235,7 +236,7 @@ if __name__ == "__main__":
                 world_model,
                 torch.tensor([[0.0, 0.0, 0.02]]),
                 torch.tensor([0.04]),
-                'apple',
+                obj_name,
             )
 
         # plan grasp
@@ -245,7 +246,8 @@ if __name__ == "__main__":
             squeeze_pose_qpos = torch.cat(
                 [
                     grasp_result.solution[..., 1, :7],
-                    grasp_result.solution[..., 1, 7:] * 3 - 2 * grasp_result.solution[..., 0, 7:],
+                    # grasp_result.solution[..., 1, 7:] * 3 - 2 * grasp_result.solution[..., 0, 7:],    # Inspire
+                    grasp_result.solution[..., 1, 7:] * 2 - 1 * grasp_result.solution[..., 0, 7:],
                 ],
                 dim=-1,
             )
@@ -268,7 +270,7 @@ if __name__ == "__main__":
 
         if "mogen" not in args.task:
             continue
-        world_info_dict['manip_name']='apple'
+        world_info_dict['manip_name']=obj_name
         world_info_dict['obj_gravity_center'] = torch.tensor([[0.0, 0.0, 0.02]])
         world_info_dict['obj_obb_length'] = torch.tensor([0.04])
         world_info_dict['world_cfg'] = world_cfg
@@ -390,8 +392,8 @@ if __name__ == "__main__":
             # old_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
             old_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_vega1/right/dexmate_debug/graspdata"),f'{world_info_dict["save_prefix"][0]}mogen.npy')
 
-            # new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata",f"apple_mogen{i}.npy"))
-            new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_vega1/right/dexmate_debug/graspdata",f"apple_mogen{i}.npy"))
+            # new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_dex3/right/dex3_debug/graspdata",f"{obj_name}_mogen{i}.npy"))
+            new_file = Path(os.path.join(f"{os.getcwd()}/src/curobo/content/assets/output/sim_vega1/right/dexmate_debug/graspdata",f"{obj_name}_mogen{i}.npy"))
 
             torch.save(pregrasp_pose_qpos[i], str(new_file).replace(".npy","_pregrasp.pt"))
             torch.save(grasp_pose_qpos[i], str(new_file).replace(".npy",".pt"))

@@ -398,17 +398,17 @@
                                   <geom name="L_hand_base_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="L_hand_base_visual_0.obj" class="visual" />
                                   <geom name="L_hand_base_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="L_hand_base_visual_1.obj" class="visual" />
                                   <body name="L_th_l0" pos="-0.04608 0.01984 -0.02684" quat="0.9940212430883849 -0.0007220406894144503 -0.10898567936269123 -0.006585487082790464">
-                                    <joint name="L_th_j0" type="hinge" range="-0.0158 1.605" axis="-1 0 0" />
+                                    <joint name="L_th_j0" type="hinge" range="-0.0158 1.605" axis="-1 0 0" damping="0.1"/>
                                     <inertial pos="0.00118 0.00613 -0.00211" quat="1.0 0.0 0.0 0.0" mass="0.00232" diaginertia="1.75839e-07 1.47406e-07 1.75736e-07" />
                                     <geom name="L_th_l0_collision_0" pos="0 0 -0.00580" quat="1.3267948966775328e-06 0.9999999999991198 0.0 0.0" type="mesh" mesh="th_l0.obj" rgba="0 0 0 0" />
                                     <geom name="L_th_l0_visual_0" pos="0 0 -0.00580" quat="1.3267948966775328e-06 0.9999999999991198 0.0 0.0" material="default_material" type="mesh" mesh="th_l0_visual.obj" class="visual" />
                                     <body name="L_th_l1" pos="-0.00675 0.02098 -0.00270" quat="0.9999791019602884 0.0 0.0 0.006464954964661678">
-                                      <joint name="L_th_j1" type="hinge" range="-0.3468 0.1834" axis="0 0 -1" />
+                                      <joint name="L_th_j1" type="hinge" range="-0.3468 0.1834" axis="0 0 -1" damping="0.1"/>
                                       <inertial pos="-0.01803 0.00796 -0.00016" quat="1.0 0.0 0.0 0.0" mass="0.00666" diaginertia="4.79346e-07 1.88643e-06 2.21298e-06" />
                                       <geom name="L_th_l1_collision_0" pos="0 0 0" quat="0.0007963267107332633 0.0 0.0 0.9999996829318346" type="mesh" mesh="th_l1.obj" rgba="0 0 0 0" />
                                       <geom name="L_th_l1_visual" pos="0 0 0" quat="0.0007963267107332633 0.0 0.0 0.9999996829318346" material="default_material" type="mesh" mesh="th_l1_visual.obj" class="visual" />
                                       <body name="L_th_l2" pos="-0.05088 0.01301 -0.00202" quat="1.0 0.0 0.0 0.0">
-                                        <joint name="L_th_j2" type="hinge" range="-0.4298 0.2731" axis="0 0 -1" />
+                                        <joint name="L_th_j2" type="hinge" range="-0.47 0.2731" axis="0 0 -1" damping="0.1"/>
                                         <inertial pos="-0.00825 0.00781 0.00190" quat="1.0 0.0 0.0 0.0" mass="0.00503" diaginertia="1.99364e-07 2.67949e-07 2.35219e-07" />
                                         <geom name="L_th_l2_collision_0" pos="0 0 0.00380" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" type="mesh" mesh="th_l2.obj" rgba="0 0 0 0" />
                                         <geom name="L_th_l2_visual_0" pos="0 0 0.00380" quat="1.3267948966775328e-06 0.0 0.0 0.9999999999991198" material="default_material" type="mesh" mesh="th_l2_visual_0.obj" class="visual" />
@@ -418,12 +418,12 @@
                                     </body>
                                   </body>
                                   <body name="L_ff_l1" pos="-0.11269 0.03067 -0.00116" quat="0.998186460029187 -0.04375257024373369 -0.001810988858448016 -0.04130646354775882">
-                                    <joint name="L_ff_j1" type="hinge" range="-1.0946 0.2891" axis="0 1 0" />
+                                    <joint name="L_ff_j1" type="hinge" range="-1.0946 0.2891" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="-0.01602 -9.85142E-05 -0.00754" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="6.86607e-08 1.54822e-07 1.62362e-07" />
                                     <geom name="L_ff_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l1.obj" rgba="0 0 0 0" />
                                     <geom name="L_ff_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l1_visual.obj" class="visual" />
                                     <body name="L_ff_l2" pos="-0.03406 0 -0.01141" quat="0.99999999875 0.0 0.0 -4.999999997916667e-05">
-                                      <joint name="L_ff_j2" type="hinge" range="-1.2101 0.3681" axis="0 1 0" />
+                                      <joint name="L_ff_j2" type="hinge" range="-1.24 0.3681" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.01405 -9.47216E-05 -0.01877" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.83569e-07 5.74333e-07 2.66485e-07" />
                                       <geom name="L_ff_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l2.obj" rgba="0 0 0 0" />
                                       <geom name="L_ff_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l2_visual_0.obj" class="visual" />
@@ -432,12 +432,12 @@
                                     </body>
                                   </body>
                                   <body name="L_mf_l1" pos="-0.11597 0.01047 0.00314" quat="0.999978054767766 0.0 0.0 -0.006624951537541248">
-                                    <joint name="L_mf_j1" type="hinge" range="-1.0844 0.2801" axis="0 1 0" />
+                                    <joint name="L_mf_j1" type="hinge" range="-1.0844 0.2801" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="0.03832 -0.00051 -0.01587" quat="1.0 0.0 0.0 0.0" mass="0.10211" diaginertia="9.82031e-05 0.000271614 0.000310529" />
                                     <geom name="L_mf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l1.obj" rgba="0 0 0 0" />
                                     <geom name="L_mf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l1_visual.obj" class="visual" />
                                     <body name="L_mf_l2" pos="-0.03829 0 -0.01467" quat="1.0 0.0 0.0 0.0">
-                                      <joint name="L_mf_j2" type="hinge" range="-1.2026 0.3533" axis="0 1 0" />
+                                      <joint name="L_mf_j2" type="hinge" range="-1.23 0.3533" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.01427 9.50657E-05 -0.01861" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.77813e-07 5.74328e-07 2.72236e-07" />
                                       <geom name="L_mf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l2.obj" rgba="0 0 0 0" />
                                       <geom name="L_mf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l2_visual_0.obj" class="visual" />
@@ -446,12 +446,12 @@
                                     </body>
                                   </body>
                                   <body name="L_rf_l1" pos="-0.11324 -0.00937 0.00239" quat="0.9995995817253195 0.0 0.0 0.028296222620099794">
-                                    <joint name="L_rf_j1" type="hinge" range="-1.0154 0.2840" axis="0 1 0" />
+                                    <joint name="L_rf_j1" type="hinge" range="-1.0154 0.2840" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="-0.01575 -9.85177E-05 -0.00809" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="7.066e-08 1.54825e-07 1.60367e-07" />
                                     <geom name="L_rf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l1.obj" rgba="0 0 0 0" />
                                     <geom name="L_rf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l1_visual.obj" class="visual" />
                                     <body name="L_rf_l2" pos="-0.03364 0 -0.01258" quat="0.99999999875 0.0 0.0 -4.999999997916667e-05">
-                                      <joint name="L_rf_j2" type="hinge" range="-1.1156 0.3599" axis="0 1 0" />
+                                      <joint name="L_rf_j2" type="hinge" range="-1.15 0.3599" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.01273 -9.38053E-05 -0.01968" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="4.17201e-07 5.74059e-07 2.32587e-07" />
                                       <geom name="L_rf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l2.obj" rgba="0 0 0 0" />
                                       <geom name="L_rf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l2_visual_0.obj" class="visual" />
@@ -460,12 +460,12 @@
                                     </body>
                                   </body>
                                   <body name="L_lf_l1" pos="-0.10947 -0.02964 -0.00017" quat="0.9972975934166506 0.04382342613518636 -0.0025903000077536265 0.05890931872803518">
-                                    <joint name="L_lf_j1" type="hinge" range="-1.0118 0.2811" axis="0 1 0" />
+                                    <joint name="L_lf_j1" type="hinge" range="-1.0118 0.2811" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="-0.01409 0.00010 -0.00740" quat="1.0 0.0 0.0 0.0" mass="0.00137" diaginertia="6.23124e-08 1.12813e-07 1.20866e-07" />
                                     <geom name="L_lf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l1.obj" rgba="0 0 0 0" />
                                     <geom name="L_lf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l1_visual.obj" class="visual" />
                                     <body name="L_lf_l2" pos="-0.02974 5.03150E-05 -0.01163" quat="0.9999999999445859 1.0527499999805544e-05 0.0 0.0">
-                                      <joint name="L_lf_j2" type="hinge" range="-1.1073 0.4014" axis="0 1 0" />
+                                      <joint name="L_lf_j2" type="hinge" range="-1.17 0.4014" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.00835 -0.00012 -0.01408" quat="1.0 0.0 0.0 0.0" mass="0.00263" diaginertia="1.24027e-07 1.5321e-07 7.25224e-08" />
                                       <geom name="L_lf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l2.obj" rgba="0 0 0 0" />
                                       <geom name="L_lf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l2_visual_0.obj" class="visual" />
@@ -532,17 +532,17 @@
                                   <geom name="R_hand_base_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="R_hand_base_visual_0.obj" class="visual" />
                                   <geom name="R_hand_base_visual_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="R_hand_base_visual_1.obj" class="visual" />
                                   <body name="R_th_l0" pos="-0.04608 -0.01984 -0.02687" quat="0.9940212557598971 -0.0007043800482859707 -0.10899501732041315 0.006429085906081568">
-                                    <joint name="R_th_j0" type="hinge" range="-0.0158 1.605" axis="1 0 0" />
+                                    <joint name="R_th_j0" type="hinge" range="-0.0158 1.605" axis="1 0 0" damping="0.1"/>
                                     <inertial pos="0.00118 -0.00613 -0.00213" quat="1.0 0.0 0.0 0.0" mass="0.00232" diaginertia="1.75838e-07 1.47472e-07 1.75668e-07" />
                                     <geom name="R_th_l0_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="th_l0.obj" rgba="0 0 0 0" />
                                     <geom name="R_th_l0_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="th_l0_visual.obj" class="visual" />
                                     <body name="R_th_l1" pos="-0.00675 -0.02097 -0.00276" quat="-1.0676136183979842e-05 0.006446304330938691 0.999978176212229 0.0014464251648291905">
-                                      <joint name="R_th_j1" type="hinge" range="-0.3468 0.1834" axis="0 0 -1" />
+                                      <joint name="R_th_j1" type="hinge" range="-0.3468 0.1834" axis="0 0 -1" damping="0.1"/>
                                       <inertial pos="0.01732 -0.00805 -0.00337" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="2.66072e-07 1.00883e-06 1.17421e-06" />
                                       <geom name="R_th_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="th_l1.obj" rgba="0 0 0 0" />
                                       <geom name="R_th_l1_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="th_l1_visual.obj" class="visual" />
                                       <body name="R_th_l2" pos="0.05088 -0.01301 0.00202" quat="1.0 0.0 0.0 0.0">
-                                        <joint name="R_th_j2" type="hinge" range="-0.4298 0.2731" axis="0 0 -1" />
+                                        <joint name="R_th_j2" type="hinge" range="-0.47 0.2731" axis="0 0 -1" damping="0.1"/>
                                         <inertial pos="0.00825 -0.00781 -0.00190" quat="1.0 0.0 0.0 0.0" mass="0.00503" diaginertia="1.99369e-07 2.67971e-07 2.35242e-07" />
                                         <geom name="R_th_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="th_l2.obj" rgba="0 0 0 0" />
                                         <geom name="R_th_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="th_l2_visual_0.obj" class="visual" />
@@ -552,12 +552,12 @@
                                     </body>
                                   </body>
                                   <body name="R_ff_l1" pos="-0.11269 -0.03066 -0.00119" quat="0.998186460029187 0.04375257024373369 -0.001810988858448016 0.04130646354775882">
-                                    <joint name="R_ff_j1" type="hinge" range="-1.0946 0.2891" axis="0 1 0" />
+                                    <joint name="R_ff_j1" type="hinge" range="-1.0946 0.2891" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="-0.01602 0.00010 -0.00754" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="6.86667e-08 1.54849e-07 1.62393e-07" />
                                     <geom name="R_ff_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l1.obj" rgba="0 0 0 0" />
                                     <geom name="R_ff_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l1_visual.obj" class="visual" />
                                     <body name="R_ff_l2" pos="-0.03406 0 -0.01141" quat="0.9999999986375 -1.4999999980687502e-05 -7.499999996593751e-10 4.999999997354167e-05">
-                                      <joint name="R_ff_j2" type="hinge" range="-1.2101 0.3681" axis="0 1 0" />
+                                      <joint name="R_ff_j2" type="hinge" range="-1.24 0.3681" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.01405 0.00009 -0.01877" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.83689e-07 5.74504e-07 2.66541e-07" />
                                       <geom name="R_ff_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="ff_l2.obj" rgba="0 0 0 0" />
                                       <geom name="R_ff_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="ff_l2_visual_0.obj" class="visual" />
@@ -566,12 +566,12 @@
                                     </body>
                                   </body>
                                   <body name="R_mf_l1" pos="-0.11597 -0.01047 0.00312" quat="0.999978054767766 0.0 0.0 0.006624951537541248">
-                                    <joint name="R_mf_j1" type="hinge" range="-1.0844 0.2801" axis="0 1 0" />
+                                    <joint name="R_mf_j1" type="hinge" range="-1.0844 0.2801" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="-0.01788 -0.00010 -0.00978" quat="1.0 0.0 0.0 0.0" mass="0.00190" diaginertia="9.59615e-08 2.34143e-07 2.28131e-07" />
                                     <geom name="R_mf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l1.obj" rgba="0 0 0 0" />
                                     <geom name="R_mf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l1_visual.obj" class="visual" />
                                     <body name="R_mf_l2" pos="-0.03829 0 -0.01467" quat="1.0 0.0 0.0 0.0">
-                                      <joint name="R_mf_j2" type="hinge" range="-1.2026 0.3533" axis="0 1 0" />
+                                      <joint name="R_mf_j2" type="hinge" range="-1.23 0.3533" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.01427 -0.00009 -0.01861" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="3.77923e-07 5.74486e-07 2.72289e-07" />
                                       <geom name="R_mf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="mf_l2.obj" rgba="0 0 0 0" />
                                       <geom name="R_mf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="mf_l2_visual_0.obj" class="visual" />
@@ -580,12 +580,12 @@
                                     </body>
                                   </body>
                                   <body name="R_rf_l1" pos="-0.11324 0.00937 0.00237" quat="0.9995995817253195 0.0 0.0 -0.028296222620099794">
-                                    <joint name="R_rf_j1" type="hinge" range="-1.0154 0.2840" axis="0 1 0" />
+                                    <joint name="R_rf_j1" type="hinge" range="-1.0154 0.2840" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="-0.01575 0.00010 -0.00809" quat="1.0 0.0 0.0 0.0" mass="0.00155" diaginertia="7.0666e-08 1.54849e-07 1.60394e-07" />
                                     <geom name="R_rf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l1.obj" rgba="0 0 0 0" />
                                     <geom name="R_rf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l1_visual.obj" class="visual" />
                                     <body name="R_rf_l2" pos="-0.03364 0 -0.01258" quat="0.9999999986375 -1.4999999980687502e-05 -7.499999996593751e-10 4.999999997354167e-05">
-                                      <joint name="R_rf_j2" type="hinge" range="-1.1156 0.3599" axis="0 1 0" />
+                                      <joint name="R_rf_j2" type="hinge" range="-1.15 0.3599" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.01273 0.00009 -0.01968" quat="1.0 0.0 0.0 0.0" mass="0.00416" diaginertia="4.172e-07 5.7406e-07 2.32592e-07" />
                                       <geom name="R_rf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="rf_l2.obj" rgba="0 0 0 0" />
                                       <geom name="R_rf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="rf_l2_visual_0.obj" class="visual" />
@@ -594,12 +594,12 @@
                                     </body>
                                   </body>
                                   <body name="R_lf_l1" pos="-0.10947 0.02964 -0.00019" quat="0.9972975934166506 -0.04382342613518636 -0.0025903000077536265 -0.05890931872803518">
-                                    <joint name="R_lf_j1" type="hinge" range="-1.0118 0.2811" axis="0 1 0" />
+                                    <joint name="R_lf_j1" type="hinge" range="-1.0118 0.2811" axis="0 1 0" damping="0.1"/>
                                     <inertial pos="-0.01409 -0.00010 -0.00740" quat="1.0 0.0 0.0 0.0" mass="0.00137" diaginertia="6.23133e-08 1.12814e-07 1.20863e-07" />
                                     <geom name="R_lf_l1_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l1.obj" rgba="0 0 0 0" />
                                     <geom name="R_lf_l1_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l1_visual.obj" class="visual" />
                                     <body name="R_lf_l2" pos="-0.02974 -0.00005 -0.01163" quat="0.99999999995 -9.999999999833334e-06 0.0 0.0">
-                                      <joint name="R_lf_j2" type="hinge" range="-1.1073 0.4014" axis="0 1 0" />
+                                      <joint name="R_lf_j2" type="hinge" range="-1.17 0.4014" axis="0 1 0" damping="0.1"/>
                                       <inertial pos="-0.00835 0.00012 -0.01408" quat="1.0 0.0 0.0 0.0" mass="0.00263" diaginertia="1.24022e-07 1.53209e-07 7.25262e-08" />
                                       <geom name="R_lf_l2_collision_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="lf_l2.obj" rgba="0 0 0 0" />
                                       <geom name="R_lf_l2_visual_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="default_material" type="mesh" mesh="lf_l2_visual_0.obj" class="visual" />
@@ -692,6 +692,32 @@
     <position name="R_arm_j5_ctrl" joint="R_arm_j5" kp="4500" kv="450" ctrlrange="-3.071 3.071" ctrllimited="true" />
     <position name="R_arm_j6_ctrl" joint="R_arm_j6" kp="4500" kv="450" ctrlrange="-1.396 1.396" ctrllimited="true" />
     <position name="R_arm_j7_ctrl" joint="R_arm_j7" kp="4500" kv="450" ctrlrange="-1.117 1.378" ctrllimited="true" />
+
+    <general name="L_th_j0_ctrl" joint="L_th_j0" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_th_j1_ctrl" joint="L_th_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_ff_j1_ctrl" joint="L_ff_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_mf_j1_ctrl" joint="L_mf_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_rf_j1_ctrl" joint="L_rf_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_lf_j1_ctrl" joint="L_lf_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_th_j0_ctrl" joint="R_th_j0" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_th_j1_ctrl" joint="R_th_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_ff_j1_ctrl" joint="R_ff_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_mf_j1_ctrl" joint="R_mf_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_rf_j1_ctrl" joint="R_rf_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_lf_j1_ctrl" joint="R_lf_j1" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    
+    <!-- Mimic Joints -->
+    <general name="L_th_j2_ctrl" joint="L_th_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_ff_j2_ctrl" joint="L_ff_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_mf_j2_ctrl" joint="L_mf_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_rf_j2_ctrl" joint="L_rf_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="L_lf_j2_ctrl" joint="L_lf_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_th_j2_ctrl" joint="R_th_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_ff_j2_ctrl" joint="R_ff_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_mf_j2_ctrl" joint="R_mf_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_rf_j2_ctrl" joint="R_rf_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+    <general name="R_lf_j2_ctrl" joint="R_lf_j2" forcerange="-3 3" biastype="affine" gainprm="5" biasprm="0 -5"/>
+
     <!-- <position name="L_th_j0_ctrl" joint="L_th_j0" kp="10" kv="1" forcerange="-1.00000000 1.00000000" forcelimited="true" ctrlrange="-0.0158 1.605" ctrllimited="true" />
     <position name="L_th_j1_ctrl" joint="L_th_j1" kp="10" kv="1" forcerange="-1.00000000 1.00000000" forcelimited="true" ctrlrange="-0.3468 0.1834" ctrllimited="true" />
     <position name="L_th_j2_ctrl" joint="L_th_j2" kp="10" kv="1" forcerange="-0.50000000 0.50000000" forcelimited="true" ctrlrange="-0.4298 0.2731" ctrllimited="true" />

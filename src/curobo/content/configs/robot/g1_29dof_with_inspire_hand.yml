@@ -7,7 +7,7 @@ robot_cfg:
         usd_robot_root: g1_29dof_with_inspire_hand
         usd_path: null
         base_link: "pelvis"
-        ee_link: "L_hand_base_link" 
+        ee_link: "R_hand_base_link" 
         link_names: [
             "L_hand_base_link",
             "L_thumb_distal",
@@ -15,6 +15,13 @@ robot_cfg:
             "L_middle_intermediate",
             "L_ring_intermediate",
             "L_pinky_intermediate",
+
+            "R_hand_base_link",
+            "R_thumb_distal",
+            "R_index_intermediate",
+            "R_middle_intermediate",
+            "R_ring_intermediate",
+            "R_pinky_intermediate",
         ]
 
         # lock_joints: {"waist_yaw_joint": 0.0, "waist_roll_joint": 0.0, "waist_pitch_joint": 0.0}
@@ -497,8 +504,8 @@ robot_cfg:
                 'left_wrist_roll_joint', 
                 'left_wrist_pitch_joint', 
                 'left_wrist_yaw_joint', 
-                'right_shoulder_pitch_joint', 
                 
+                'right_shoulder_pitch_joint', 
                 'right_shoulder_roll_joint', 
                 'right_shoulder_yaw_joint', 
                 'right_elbow_joint', 

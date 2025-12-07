@@ -15,7 +15,7 @@ robot_cfg:
       "R_mf_l2",
       "R_rf_l2",
       "R_lf_l2",
-
+      
       "L_hand_base",
       "L_th_l2",
       "L_ff_l2",
@@ -92,17 +92,52 @@ robot_cfg:
     
     self_collision_ignore: {
       "torso_l1": [
-        "torso_l1",
-        "torso_l2",
-        "L_arm_l1",
-        "R_arm_l1",
-      ],
-      "torso_l2": [
+        # Torso
         "torso_l1",
         "torso_l2",
         "torso_l3",
+        
+        # Left arm
         "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+        
+        # Right arm
         "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
+      ],
+      "torso_l2": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Left arm
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+        
+        # Right arm
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
       ],
       "torso_l3": [
         "torso_l2",
@@ -113,34 +148,74 @@ robot_cfg:
       
       # Left arm self-collision ignore
       "L_arm_l1": [
-        "L_arm_l1",
-        "L_arm_l2",
-        "L_arm_l3",
+        # Torso
         "torso_l1",
         "torso_l2",
         "torso_l3",
-      ],
-      "L_arm_l2": [
+        
+        # Left arm
         "L_arm_l1",
-        "L_arm_l2",
-        "L_arm_l3",
-        "L_arm_l4",
-      ],
-      "L_arm_l3": [
-        "L_arm_l1",
-        "L_arm_l2",
-        "L_arm_l3",
-        "L_arm_l4",
-        "L_arm_l5",
-      ],
-      "L_arm_l4": [
         "L_arm_l2",
         "L_arm_l3",
         "L_arm_l4",
         "L_arm_l5",
         "L_arm_l6",
+        "L_arm_l7",
+      ],
+      "L_arm_l2": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Left arm
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+      ],
+      "L_arm_l3": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Left arm
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
+      ],
+      "L_arm_l4": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Left arm
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
+        "L_arm_l5",
+        "L_arm_l6",
+        "L_arm_l7",
       ],
       "L_arm_l5": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Left arm
+        "L_arm_l1",
+        "L_arm_l2",
         "L_arm_l3",
         "L_arm_l4",
         "L_arm_l5",
@@ -148,47 +223,108 @@ robot_cfg:
         "L_arm_l7",
       ],
       "L_arm_l6": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Left arm
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
         "L_arm_l4",
         "L_arm_l5",
         "L_arm_l6",
         "L_arm_l7",
       ],
       "L_arm_l7": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Left arm
+        "L_arm_l1",
+        "L_arm_l2",
+        "L_arm_l3",
+        "L_arm_l4",
         "L_arm_l5",
         "L_arm_l6",
         "L_arm_l7",
+
+        "L_hand_base",
       ],
       
       # Right arm self-collision ignore
       "R_arm_l1": [
-        "R_arm_l1",
-        "R_arm_l2",
-        "R_arm_l3",
+        # Torso
         "torso_l1",
         "torso_l2",
         "torso_l3",
-      ],
-      "R_arm_l2": [
+        
+        # Right arm
         "R_arm_l1",
-        "R_arm_l2",
-        "R_arm_l3",
-        "R_arm_l4",
-      ],
-      "R_arm_l3": [
-        "R_arm_l1",
-        "R_arm_l2",
-        "R_arm_l3",
-        "R_arm_l4",
-        "R_arm_l5",
-      ],
-      "R_arm_l4": [
         "R_arm_l2",
         "R_arm_l3",
         "R_arm_l4",
         "R_arm_l5",
         "R_arm_l6",
+        "R_arm_l7",
+      ],
+      "R_arm_l2": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Right arm
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
+      ],
+      "R_arm_l3": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Right arm
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
+      ],
+      "R_arm_l4": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Right arm
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
+        "R_arm_l5",
+        "R_arm_l6",
+        "R_arm_l7",
       ],
       "R_arm_l5": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Right arm
+        "R_arm_l1",
+        "R_arm_l2",
         "R_arm_l3",
         "R_arm_l4",
         "R_arm_l5",
@@ -196,15 +332,35 @@ robot_cfg:
         "R_arm_l7",
       ],
       "R_arm_l6": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Right arm
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
         "R_arm_l4",
         "R_arm_l5",
         "R_arm_l6",
         "R_arm_l7",
       ],
       "R_arm_l7": [
+        # Torso
+        "torso_l1",
+        "torso_l2",
+        "torso_l3",
+        
+        # Right arm
+        "R_arm_l1",
+        "R_arm_l2",
+        "R_arm_l3",
+        "R_arm_l4",
         "R_arm_l5",
         "R_arm_l6",
         "R_arm_l7",
+
         "R_hand_base",
       ],
       
@@ -572,13 +728,14 @@ robot_cfg:
         # Head (3)
         0.0, 0.0, 0.0,
         # Left arm (7)
+        # 1.57, 0.0, 0.0, -1.57, 0.0, 0.0, 0.0,
         0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
         # Left hand (6)
         0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
         # Right arm (7)
-        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        -1.57, 0.0, 0.0, -1.57, 0.0, 0.0, 0.0,
         # Right hand (6)
-        0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        1.5, 0.0, 0.0, 0.0, 0.0, 0.0,
       ] # List[float]
       
       null_space_weight: [

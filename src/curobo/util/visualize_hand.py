@@ -550,7 +550,7 @@ class URDFPenetrationVisualizer:
 if __name__ == "__main__":
     config = URDFVisualizerConfig(
         urdf_path="/home/kaidikang/BODex/src/curobo/content/assets/robot/vega_1/vega.urdf",
-        collision_spheres_path="/home/kaidikang/BODex/src/curobo/content/configs/robot/spheres/vega1_dexmate.yml",  # Contains collision_link_names
+        collision_spheres_path="/home/kaidikang/BODex/src/curobo/content/configs/robot/spheres/dexmate_right.yml",  # Contains collision_link_names
         joint_angles={
             # Only specify hand joint angles
             
@@ -571,20 +571,20 @@ if __name__ == "__main__":
             # "R_pinky_proximal_joint": 0.0,  # Pinky flexion
 
             # Dexmate right
-            # "R_th_j0": 0.0,          # Thumb opposition/yaw
-            # "R_th_j1": 0.0,          # Thumb flexion/pitch
-            # "R_ff_j1": 0.0,          # Index flexion
-            # "R_mf_j1": 0.0,          # Middle flexion
-            # "R_rf_j1": 0.0,          # Ring flexion
-            # "R_lf_j1": 0.0,          # Pinky flexion
+            "R_th_j0": 1.605,          # Thumb opposition/yaw
+            "R_th_j1": 0.1834,          # Thumb flexion/pitch
+            "R_ff_j1": 0.2891,          # Index flexion
+            "R_mf_j1": 0.2801,          # Middle flexion
+            "R_rf_j1": 0.2840,          # Ring flexion
+            "R_lf_j1": 0.2811,          # Pinky flexion
 
             # Dexmate left
-            "L_th_j0": 0.0,          # Thumb opposition/yaw
-            "L_th_j1": 0.0,          # Thumb flexion/pitch
-            "L_ff_j1": 0.0,          # Index flexion
-            "L_mf_j1": 0.0,          # Middle flexion
-            "L_rf_j1": 0.0,          # Ring flexion
-            "L_lf_j1": 0.0,          # Pinky flexion
+            # "L_th_j0": -0.0158,          # Thumb opposition/yaw
+            # "L_th_j1": -0.3468,          # Thumb flexion/pitch
+            # "L_ff_j1": -1.0946,          # Index flexion
+            # "L_mf_j1": -1.0844,          # Middle flexion
+            # "L_rf_j1": -1.0154,          # Ring flexion
+            # "L_lf_j1": -1.0118,          # Pinky flexion
         },
         base_position=[0.0, 0.0, 0.0],
         base_orientation=[0.0, 0.0, 0.0],

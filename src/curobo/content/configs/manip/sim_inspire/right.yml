@@ -86,8 +86,12 @@ mogen_init: [
   0.0,    # Middle
   0.0,    # Ring
   0.0,    # Pinky
-  # 7 base pose values (filled by solver)
+  # arm
   0, 0, 0, 0, 0, 0, 0,
-  # Padding to match expected length
+  # arm
+  0, 0, 0, 0, 0, 0, 0,
+  # waist
   0, 0, 0, 
+  # hand
+  0, 0, 0, 0, 0, 0,
 ]

@@ -414,7 +414,7 @@ collision_spheres:
 
   # Thumb - link 2 (distal)
   R_th_l2:
-    - center: [0.008, -0.008, -0.001]
+    - center: [0.008, -0.005, -0.003]
       radius: 0.005
 
   # Index finger - proximal

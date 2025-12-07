@@ -27,7 +27,7 @@ model:
 
 cost:
   grasp_cfg:
-    weight: [100, 1000, 10] # grasp loss, dist loss, regu loss
+    weight: [1000, 500, 10] # grasp loss, dist loss, regu loss
     perturb_strength_bound: [0.01, 0.02]
   cspace_cfg:
     weight: 0.0

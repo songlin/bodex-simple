@@ -32,6 +32,7 @@ robot_cfg:
     
     # Contact points - ONLY fingertip links (l2 links)
     link_names:
+      - R_hand_base
       - R_th_l2      # Thumb tip
       - R_ff_l2      # Index fingertip
       - R_mf_l2      # Middle fingertip
@@ -85,7 +86,7 @@ robot_cfg:
       
       # Weight for configuration space distance metric
       cspace_distance_weight:
-        - 0.15  # Thumb yaw more important for grasp variety
+        - 0.1
         - 0.1
         - 0.1
         - 0.1
@@ -110,12 +111,12 @@ robot_cfg:
       # R_rf_j1: -1.0154 to 0.2840
       # R_lf_j1: -1.0118 to 0.2811
       retract_config:
-        - 0.5    # Thumb moderate opposition
-        - 0.0    # Thumb neutral flexion
-        - -0.3   # Fingers partially open
-        - -0.3
-        - -0.3
-        - -0.3
+        - 1.5    # Thumb moderate opposition
+        - 0    # Thumb neutral flexion
+        - 0   # Fingers partially open
+        - 0
+        - 0
+        - 0
       
       max_acceleration: 15.0
       max_jerk: 500.0
