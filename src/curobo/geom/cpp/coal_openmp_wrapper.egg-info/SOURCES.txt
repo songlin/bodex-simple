@@ -1,0 +1,8 @@
+coal_parallel.cpp
+setup.py
+coal_openmp_wrapper.egg-info/PKG-INFO
+coal_openmp_wrapper.egg-info/SOURCES.txt
+coal_openmp_wrapper.egg-info/dependency_links.txt
+coal_openmp_wrapper.egg-info/requires.txt
+coal_openmp_wrapper.egg-info/top_level.txt
+test/test.py
